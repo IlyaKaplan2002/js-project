@@ -1,7 +1,7 @@
 @mixin mq($range) {
-  $mobile: 480px;
+  $mobile: 320px;
   $tablet: 768px;
-  $desktop: 1366px;
+  $desktop: 1024px;
 
   @if $range == mobile-only {
     @media (max-width: $tablet - 0.02) {
@@ -54,4 +54,25 @@
   font-size: $size;
   line-height: $height;
   letter-spacing: $spacing;
+}
+
+@mixin background($parameter: home) {
+  $image: '../images/1x/header-bg.jpg';
+  $image-2: '../images/2x/header-bg@2x.jpg';
+
+  @if $parameter == lib {
+    $image: '../images/1x/header-bg-new.jpg';
+    $image-2: '../images/2x/header-bg-new@2x.jpg';
+  }
+
+  background-image: url($image);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url($image-2);
+  }
 }
