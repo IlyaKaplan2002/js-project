@@ -1,0 +1,4 @@
+const FIREBASE_API = 'AIzaSyB8q4rbjQAl2pQw-sG-B6jmEtH9CuBrm1Y';
+const MOVIE_API = 'b0de889e3f741ea781569353e4581a9b';
+
+export { FIREBASE_API, MOVIE_API };
