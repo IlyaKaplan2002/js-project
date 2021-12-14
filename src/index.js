@@ -1,4 +1,4 @@
-import { makeNavList } from './js/nav';
+import { makeNavList } from './js/header/nav';
 import './sass/main.scss';
 
 makeNavList();

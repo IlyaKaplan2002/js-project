@@ -1,11 +1,15 @@
-import { refs } from './base/refs';
-import { store } from './base/store';
+import { refs } from '../base/refs';
+import { store } from '../base/store';
+import { onLogInClick } from './logIn';
+import { logOut } from './logOut';
+import { onSignUpClick } from './signUp';
 
 const homeHeaderMarkup = `<form name="search" class="search">
       <input class="search__input" type="text" name="query" placeholder="Поиск фильмов" />
       <button type="submit" class="search__button">
-        <svg class="search__icon-wrapper">
-          <use class="search__icon" href="./images/icons/icons.svg#search"></use>
+        <svg class="search__icon-wrapper" viewBox="0 0 32 32">
+            <path class="search__icon" fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M14.667 25.333c5.891 0 10.667-4.776 10.667-10.667s-4.776-10.667-10.667-10.667c-5.891 0-10.667 4.776-10.667 10.667s4.776 10.667 10.667 10.667z"></path>
+            <path class="search__icon" fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M28 28.001l-5.8-5.8"></path>
         </svg>
       </button>
     </form>`;
@@ -49,12 +53,15 @@ const onNavListClick = e => {
       break;
 
     case 'logIn':
+      onLogInClick();
       break;
 
     case 'signUp':
+      onSignUpClick();
       break;
 
     case 'logOut':
+      logOut();
       break;
 
     default:
@@ -87,6 +94,7 @@ const makeNavList = () => {
   refs.navList.querySelector('[data-action="home"]').classList.add('nav__item--current');
   refs.navList.addEventListener('click', onNavListClick);
   refs.headerWrapper.innerHTML = homeHeaderMarkup;
+  refs.header.classList.remove('lib');
 };
 
 export { makeNavList };

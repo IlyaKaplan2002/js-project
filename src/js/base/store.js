@@ -1,5 +1,6 @@
 export const store = {
   auth: {
-    isLoggedIn: localStorage.getItem('isLoggedIn'),
+    isLoggedIn: JSON.parse(localStorage.getItem('isLoggedIn')),
+    userId: localStorage.getItem('userId'),
   },
 };

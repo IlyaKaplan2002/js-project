@@ -98,6 +98,7 @@
     outline: none;
     border: none;
     color: var(--header-links);
+    width: 100%;
 
     &::placeholder {
       color: var(--header-links);
@@ -125,7 +126,6 @@
 
 .filter {
   display: flex;
-  //   align-items: center;
   justify-content: center;
 
   &__item:not(:last-child) {
