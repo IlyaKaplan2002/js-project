@@ -1,0 +1,45 @@
+
+
+
+    <div class="modal">
+        <button  type="button" class="button modal__button-in">
+            <svg class="modal__svg-button" width="30" height="30">
+                <use href="/src/images/close.svg"></use>
+            </svg>
+        </button>
+        <div class="cinema-card">
+            <a class="gallery__item" href="${}">
+                <img class="cinema__image" src="${}" data-source="${}"
+                    alt="${}" loading="lazy" />
+            </a>
+            <div class="info">
+                <p class="info-item1">
+                   <b class="info-title">${}</b>
+                </p>
+                <p class="info-item2">
+                    <strong class="info-name">Vote / Votes</strong>
+                    <b class="info-data-flex"><span class="info-data-acent">${}</span>/   ${}</b>
+                </p>
+                <p class="info-item3">
+                    <strong class="info-name">Popularity</strong>
+                    <b class="info-data">${}</b>
+                </p>
+                <p class="info-item4">
+                    <strong class="info-name">Original Title</strong>
+                    <b class="info-data">${}</b>
+                </p>
+                <p class="info-item5">
+                    <strong class="info-name">Genre</strong>
+                    <b class="info-data">${}</b>
+                </p>
+                <p class="info-item6">
+                    <strong class="info-name">About</strong>
+                    <b class="info-data">${}</b>
+                </p>
+            </div>
+        </div>
+        <div class="button modal__button-add">
+         <button type="button" class="add-to-watched">add to watched</button>
+         <button type="button" class="add-to-queue">add to queue</button>
+        </div>
+    </div>

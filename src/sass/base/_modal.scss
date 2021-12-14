@@ -1,0 +1,119 @@
+.modal {
+    position: absolute;
+    top: 20px;
+   
+    width: 100%;
+    max-width: 280px;
+    padding: 20px, 48px, 20px, 41px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background: var(--header-links);
+
+    @media screen and (min-width: 768px) {
+      top: 230px; 
+      max-width: 618px; 
+      padding: 28px, 42px, 29px, 41px;
+    }
+    
+    @media screen and (min-width: 1024px) {
+      top: 100px; 
+      max-width: 882px; 
+      padding: 30px, 50px, 30px, 102px;
+    }
+
+}
+
+.modal__button-in { 
+
+  position: absolute;
+  
+  top: 10px;
+  right: 10px;
+  width: 30px ;
+  height: 30px; 
+}
+  
+.cinema__image {
+  max-width: 240px;
+
+  margin-bottom: 30px;
+  border-radius: 5px;
+  object-fit: cover;
+
+  @media screen and (min-width: 768px) {
+      max-width: 264px;
+
+      margin-bottom: 0px;
+
+  }
+  
+  @media screen and (min-width: 1024px) {
+      max-width: 396px;
+      
+      margin-bottom: 0px;
+
+  }
+
+}
+
+.info-item1 {
+   margin-bottom: 20px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 1.15;
+
+text-transform: uppercase;
+    
+}
+
+.info-name {
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 1.33;
+
+color: #8C8C8C;
+ }
+
+.info-item2 { 
+
+display: flex;    
+margin-bottom: 10px;
+
+}
+
+.info-data-flex {
+  display: flex; 
+  
+  margin-left: 41px;
+}
+
+.info-data-acent {
+    display: flex;
+    max-width: 36px;
+    height: 16px;
+    border-radius: 5px;
+    border: none;
+
+    font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 1.17;
+
+align-items: center;
+text-align: center;
+text-transform: uppercase;
+
+    margin-left: 2px;
+
+    background-color: var(--header-links-accent);
+    color: var(--header-links);;
+}
+
