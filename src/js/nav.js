@@ -17,6 +17,18 @@ const myLibraryHeaderMarkup = `<ul class="filter">
       <li class="filter__item"><button class="filter__button">queue</button></li>
     </ul>`;
 
+const onHomeClick = () => {
+  refs.headerWrapper.innerHTML = homeHeaderMarkup;
+  if (refs.header.classList.contains('lib')) {
+    refs.header.classList.remove('lib');
+  }
+};
+
+const onLibClick = () => {
+  refs.headerWrapper.innerHTML = myLibraryHeaderMarkup;
+  refs.header.classList.add('lib');
+};
+
 const onNavListClick = e => {
   if (!e.target.classList.contains('nav__button')) return;
 
@@ -29,15 +41,11 @@ const onNavListClick = e => {
 
   switch (action) {
     case 'home':
-      refs.headerWrapper.innerHTML = homeHeaderMarkup;
-      if (refs.header.classList.contains('lib')) {
-        refs.header.classList.remove('lib');
-      }
+      onHomeClick();
       break;
 
     case 'myLibrary':
-      refs.headerWrapper.innerHTML = myLibraryHeaderMarkup;
-      refs.header.classList.add('lib');
+      onLibClick();
       break;
 
     case 'logIn':
