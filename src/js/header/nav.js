@@ -22,6 +22,10 @@ const myLibraryHeaderMarkup = `<ul class="filter">
     </ul>`;
 
 const onHomeClick = () => {
+  const current = refs.navList.querySelector('.nav__item--current');
+  current.classList.remove('nav__item--current');
+  const item = refs.navList.querySelector('[data-action="home"]');
+  item.classList.add('nav__item--current');
   refs.headerWrapper.innerHTML = homeHeaderMarkup;
   if (refs.header.classList.contains('lib')) {
     refs.header.classList.remove('lib');
@@ -93,6 +97,7 @@ const makeNavList = () => {
   refs.navList.innerHTML = markup;
   refs.navList.querySelector('[data-action="home"]').classList.add('nav__item--current');
   refs.navList.addEventListener('click', onNavListClick);
+  refs.headerLogo.addEventListener('click', onHomeClick);
   refs.headerWrapper.innerHTML = homeHeaderMarkup;
   refs.header.classList.remove('lib');
 };

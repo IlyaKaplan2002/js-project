@@ -34,10 +34,15 @@
     display: none;
     color: var(--header-links);
     @include font(500, 30px);
+    @include animation(color);
 
     @media screen and (min-width: 768px) {
       display: inline;
     }
+  }
+
+  &:hover .logo__text {
+    color: var(--header-links-accent);
   }
 }
 
