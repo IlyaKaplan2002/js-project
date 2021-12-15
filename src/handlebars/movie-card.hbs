@@ -1,0 +1,17 @@
+{{#each this}}
+    <li>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+            <img src="{{poster_path}}" alt="{{original_title}}" />
+            <div>
+                <h2>
+                    {{original_title}}
+                </h2>
+                <p>
+                    {{genre_ids}}
+                    |
+                    {{release_date}}
+                </p>
+            </div>       
+        </a>
+    </li>
+{{/each}}
