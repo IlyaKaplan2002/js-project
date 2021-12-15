@@ -1,14 +1,11 @@
-import { makeNavList } from './js/header/nav';
 import './sass/main.scss';
+
+import { makeNavList } from './js/header/nav';
+
+import { fetchTrendingMovies } from './js/api/fetchTrendingMovies';
+import { matchGenresAndFilter } from './js/cards/matchGenres';
+import { renderMarkup } from './js/cards/renderMarkup';
 
 makeNavList();
 
-import { fetchTrendingMovies } from './js/api/fetchTrendingMovies';
-import FetchMovieGenres from './js/api/fetchTrendingMovies';
-import { renderMarkup } from './js/renderMarkup';
-
-fetchTrendingMovies();
-// renderMarkup();
-
-const fetchMovieGenres = new FetchMovieGenres();
-console.log(fetchMovieGenres);
+fetchTrendingMovies().then(matchGenresAndFilter).then(renderMarkup);

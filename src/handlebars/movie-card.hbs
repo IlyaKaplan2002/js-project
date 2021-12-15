@@ -1,17 +1,18 @@
 {{#each this}}
-    <li>
-        <a href="#" target="_blank" rel="noopener noreferrer">
+    <li class="card-set-item">
+        <button href="#" target="_blank" rel="noopener noreferrer">
             <img src="{{poster_path}}" alt="{{original_title}}" />
             <div>
                 <h2>
                     {{original_title}}
                 </h2>
                 <p>
-                    {{genre_ids}}
+                    {{genres}}
                     |
-                    {{release_date}}
+                    {{release_date.split('-')[0]}}
+                    {{vote_average}}
                 </p>
             </div>       
-        </a>
+        </button>
     </li>
 {{/each}}
