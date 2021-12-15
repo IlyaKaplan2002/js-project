@@ -1,0 +1,307 @@
+.modal {
+    position: absolute;
+   
+    left: 20px;
+    top: 20px;
+   
+    width: 100%;
+    max-width: 280px;
+    padding: 48px 20px 41px 20px;
+   
+
+    margin-left: auto;
+    margin-right: auto;
+
+    background: var(--header-links);
+    outline: dotted red 1px;
+
+    @media screen and (min-width: 768px) {
+      top: 230px; 
+      max-width: 618px; 
+      
+    }
+    
+    @media screen and (min-width: 1024px) {
+      top: 100px; 
+      max-width: 882px; 
+      
+    }
+
+}
+
+.modal__button-in { 
+
+  position: absolute;
+  
+  top: 10px;
+  right: 10px;
+  width: 30px ;
+  height: 30px; 
+
+  outline: dotted green 1px;
+}
+  
+.cinema__image {
+  width: 240px;
+  height: 357px;
+
+  margin-bottom: 30px;
+  border-radius: 5px;
+  object-fit: cover;
+
+  outline: dotted yellow 1px;
+
+  @media screen and (min-width: 768px) {
+      max-width: 264px;
+
+      margin-bottom: 0px;
+
+  }
+  
+  @media screen and (min-width: 1024px) {
+      max-width: 396px;
+      
+      margin-bottom: 0px;
+
+  }
+
+}
+
+.info-name {
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 1.33;
+
+color: #8C8C8C;
+ }
+
+.info-item1 {
+   margin-bottom: 20px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 1.15;
+
+text-transform: uppercase;
+    
+}
+
+
+.info-item2 { 
+
+display: flex; 
+align-items: baseline;
+  
+margin-bottom: 10px;
+
+
+
+}
+
+.info-data2 {
+  display: flex; 
+  align-items: baseline;
+  
+  margin-left: 41px;
+  font-weight: normal;
+}
+
+.info-data2-acent1 {
+    display: flex;
+    width: 36px;
+    height: 16px;
+    border-radius: 5px;
+    border: none;
+
+    font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 1.17;
+
+align-items: center;
+text-align: center;
+justify-content: center;
+text-transform: uppercase;
+
+    margin-right: 3px;
+
+    background-color: var(--header-links-accent);
+    color: var(--header-links);
+}
+
+.info-data2-acent2 {
+    display: flex;
+    width: 36px;
+    height: 16px;
+    border-radius: 5px;
+    border: none;
+
+    font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 1.17;
+
+align-items: center;
+text-align: center;
+justify-content: center;
+text-transform: uppercase;
+
+    margin-left: 3px;
+
+    background-color: var(--pag-button-bg);
+    
+}
+
+.info-item3 { 
+
+display: flex; 
+align-items: baseline;
+  
+margin-bottom: 10px;
+
+}
+
+.info-data3 {
+   
+  margin-left: 53px;
+  
+ font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 1.17;
+
+text-transform: uppercase;
+}
+
+.info-item4 { 
+
+display: flex; 
+align-items: baseline;
+  
+margin-bottom: 10px;
+
+}
+
+.info-data4 {
+   
+  margin-left: 39px;
+  
+ font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 1.33;
+
+text-transform: uppercase;
+}
+
+.info-item5 { 
+
+display: flex; 
+align-items: baseline;
+  
+margin-bottom: 20px;
+
+}
+
+.info-data5 {
+   
+  margin-left: 76px;
+  
+ font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 1.33;
+
+}
+
+.info-item6 { 
+
+  display: flex;
+  flex-direction: column;
+  
+margin-bottom: 21px;
+
+}
+
+.info-item6 .info-name {
+
+  margin-bottom: 10px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 1.33;
+text-transform: uppercase;
+color: var(--main-black);
+}
+
+.info-data6 {
+
+ font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 1.67;
+
+}
+
+.modal__button-add {
+display: flex;
+justify-content: space-between;
+}
+
+.add-to-watched {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 112.58px;
+  height: 64px;
+
+  padding-left: 8.28px;
+  padding-right: 8.28px;
+  border: none;
+  border-radius: 5px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 1.33;
+text-transform: uppercase;
+
+  background-color: var(--header-links-accent);
+  color: var(--header-links);
+
+}
+
+.add-to-queue {
+display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 112.58px;
+  height: 64px;
+
+   border: 1px solid var(--main-black);
+  border-radius: 5px;
+
+  font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 1.33;
+text-transform: uppercase;
+
+}
