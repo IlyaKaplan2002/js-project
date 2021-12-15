@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { MOVIE_API } from './apiKeys';
-import { MOVIE_BASE_URL } from './apiBaseURLs';
-import { store } from '../base/store';
+import { MOVIE_API } from '../apiKeys';
+import { MOVIE_BASE_URL } from '../apiBaseURLs';
+import { store } from '../../base/store';
 
 export { fetchTrendingMovies };
 
