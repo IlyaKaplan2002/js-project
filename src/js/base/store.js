@@ -4,6 +4,7 @@ export const store = {
     userId: localStorage.getItem('userId'),
   },
   movie: {
+    query: '',
     totalPages: 0,
     page: 1,
     genres: [
