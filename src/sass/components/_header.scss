@@ -1,0 +1,172 @@
+.header {
+  @include background();
+
+  &.lib {
+    @include background(lib);
+  }
+
+  &__container {
+    padding-top: 45px;
+    padding-bottom: 90px;
+  }
+}
+
+.logo {
+  color: var(--logo-icon);
+  cursor: pointer;
+
+  @include animation(color);
+
+  &:hover {
+    color: var(--header-links-accent);
+  }
+
+  &__icon-wrapper {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__icon {
+    stroke: currentColor;
+  }
+
+  &__text {
+    display: none;
+    color: var(--header-links);
+    @include font(500, 30px);
+    @include animation(color);
+
+    @media screen and (min-width: 768px) {
+      display: inline;
+    }
+  }
+
+  &:hover .logo__text {
+    color: var(--header-links-accent);
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  &__list {
+    display: flex;
+  }
+
+  &__button {
+    @include font();
+    cursor: pointer;
+    color: var(--header-links);
+    text-transform: uppercase;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 3px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      @include animation(background-color);
+    }
+
+    &:hover::after {
+      background-color: var(--header-links-accent);
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 3px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      @include animation(background-color);
+    }
+
+    &--current::after {
+      background-color: var(--header-links-accent);
+    }
+  }
+}
+
+.search {
+  margin: auto;
+  max-width: 366px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--header-links);
+
+  &__input {
+    background-color: inherit;
+    outline: none;
+    border: none;
+    color: var(--header-links);
+    width: 100%;
+
+    &::placeholder {
+      color: var(--header-links);
+    }
+  }
+
+  &__button {
+    color: var(--header-links);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--header-links-accent);
+    }
+  }
+
+  &__icon-wrapper {
+    width: 12px;
+    height: 12px;
+  }
+
+  &__icon {
+    stroke: currentColor;
+  }
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__item--current > &__button {
+    background-color: var(--header-links-accent);
+    border-color: transparent;
+  }
+
+  &__button {
+    @include font();
+    cursor: pointer;
+    padding: 14px 36px;
+    color: var(--header-links);
+    text-transform: uppercase;
+    border: 1px solid var(--header-links);
+    border-radius: 5px;
+
+    @include animation(background-color);
+
+    &:hover {
+      background-color: var(--header-links-accent);
+      border-color: transparent;
+    }
+  }
+}
