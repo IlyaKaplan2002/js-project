@@ -25,13 +25,16 @@
 }
 
 .auth-modal {
-  // width: 100%;
-  // height: 100%;
-  max-height: 222px;
-  max-width: 280px;
+  max-height: 310px;
   background-color: var(--header-links);
   position: relative;
-  padding: 50px 20px 40px;
+  padding: 50px 50px 40px;
+  border-radius: 14px;
+
+  &__title {
+    @include font(700, 24px, 28px);
+    margin-bottom: 15px;
+  }
 
   &__close {
     width: 30px;
@@ -64,10 +67,17 @@
   &__label {
     @include font();
     display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   &__label:not(:last-child) {
     margin-bottom: 30px;
+  }
+
+  &__input {
+    width: 100%;
+    margin-top: 5px;
   }
 
   &__submit-btn {
