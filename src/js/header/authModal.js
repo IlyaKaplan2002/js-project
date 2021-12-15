@@ -1,11 +1,13 @@
 import { refs } from '../base/refs';
 import { logIn } from './logIn';
+import { makeNavList } from './nav';
 import { signUp } from './signUp';
 
 const closeAuthModal = () => {
   refs.authBackdrop.classList.remove('is-open');
   refs.authForm.removeEventListener('submit', logIn);
   refs.authForm.removeEventListener('submit', signUp);
+  makeNavList();
 };
 
 const escCloseModal = e => {

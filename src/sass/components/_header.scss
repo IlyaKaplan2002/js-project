@@ -61,6 +61,21 @@
     cursor: pointer;
     color: var(--header-links);
     text-transform: uppercase;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 3px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      @include animation(background-color);
+    }
+
+    &:hover::after {
+      background-color: var(--header-links-accent);
+    }
   }
 
   &__item {
@@ -79,10 +94,6 @@
       left: 0;
 
       @include animation(background-color);
-    }
-
-    &:hover::after {
-      background-color: var(--header-links-accent);
     }
 
     &--current::after {
