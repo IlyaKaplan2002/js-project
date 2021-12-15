@@ -6,4 +6,6 @@
 @import './base/global-styles';
 @import './base/container';
 @import './base/card-set';
-@import './base/modal';
+
+@import './components/header';
+@import './components/auth-modal';
