@@ -1,5 +1,6 @@
 import { refs } from '../base/refs';
 import { store } from '../base/store';
+import { makeTrendingMovies } from '../main/makeTrendingMovies';
 import { onLogInClick } from './logIn';
 import { logOut } from './logOut';
 import { onSignUpClick } from './signUp';
@@ -27,6 +28,7 @@ const onHomeClick = () => {
   const item = refs.navList.querySelector('[data-action="home"]');
   item.classList.add('nav__item--current');
   refs.headerWrapper.innerHTML = homeHeaderMarkup;
+  makeTrendingMovies();
   if (refs.header.classList.contains('lib')) {
     refs.header.classList.remove('lib');
   }
