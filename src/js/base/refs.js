@@ -8,4 +8,5 @@ export const refs = {
   authSbmBtn: document.querySelector('.auth-modal__submit-btn'),
   authBackdrop: document.querySelector('.auth-backdrop'),
   authModalClose: document.querySelector('.auth-modal__close'),
+  trendingMovies: document.querySelector('.trending-movies-list'),
 };

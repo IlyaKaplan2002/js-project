@@ -1,14 +1,11 @@
-import { makeNavList } from './js/header/nav';
-// import {renderModalStudents} from './js/modalStudents';
-import {onOpenModalStudents} from './js/modalStudents';
 import './sass/main.scss';
 
-// import modalStudents from './handlebars/modalStudents.hbs'
+import { makeNavList } from './js/header/nav';
+
+import { fetchTrendingMovies } from './js/api/movie/fetchTrendingMovies';
+import { matchGenresAndFilter } from './js/cards/matchGenres';
+import { renderMarkup } from './js/cards/renderMarkup';
+
 makeNavList();
-// renderModalStudents();
-onOpenModalStudents();
-// console.log(modalStudents);
 
-
-
-
+fetchTrendingMovies().then(matchGenresAndFilter).then(renderMarkup);
