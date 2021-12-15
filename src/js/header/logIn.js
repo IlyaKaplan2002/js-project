@@ -30,6 +30,7 @@ const logIn = e => {
 
 const onLogInClick = () => {
   refs.authSbmBtn.textContent = 'Log in';
+  refs.authTitle.textContent = 'Log in';
   refs.authForm.addEventListener('submit', logIn);
   openAuthModal();
 };

@@ -30,6 +30,7 @@ const signUp = e => {
 
 const onSignUpClick = () => {
   refs.authSbmBtn.textContent = 'Sign up';
+  refs.authTitle.textContent = 'Sign up';
   refs.authForm.addEventListener('submit', signUp);
   openAuthModal();
 };
