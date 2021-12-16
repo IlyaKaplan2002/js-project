@@ -5,7 +5,7 @@ export { renderMarkup };
 
 function renderMarkup(films) {
   const markup = films.reduce((acc, film) => {
-    let {
+    const {
       id,
       poster_path,
       original_title = 'Unknown',
