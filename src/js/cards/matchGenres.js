@@ -2,9 +2,13 @@ import { store } from '../base/store';
 
 const matchGenresAndFilter = films => {
   for (const film of films) {
-    film.genres = film.genre_ids.map(
-      id => store.movie.genres.filter(genre => genre.id === id)[0].name,
-    );
+    if (film.genres) {
+      film.genres = film.genres.map(genre => genre.name);
+    } else {
+      film.genres = film.genre_ids.map(
+        id => store.movie.genres.filter(genre => genre.id === id)[0].name,
+      );
+    }
   }
 
   const filteredFilms = films.map(film => {
