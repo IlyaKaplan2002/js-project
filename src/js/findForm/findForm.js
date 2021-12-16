@@ -6,6 +6,7 @@ import { renderMarkup } from '../cards/renderMarkup';
 const onSearchSubmit = e => {
   e.preventDefault();
   const inputValue = document.forms.search.elements.query.value;
+  store.movie.page = 1;
   store.movie.query = inputValue;
   findFilms().then(matchGenresAndFilter).then(renderMarkup).catch(console.dir);
 };
