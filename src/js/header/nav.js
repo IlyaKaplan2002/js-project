@@ -1,5 +1,6 @@
 import { refs } from '../base/refs';
 import { store } from '../base/store';
+import { addSearchFormListener, removeSearchFormListener } from '../findForm/findForm';
 import { makeTrendingMovies } from '../main/makeTrendingMovies';
 import { onLogInClick } from './logIn';
 import { logOut } from './logOut';
@@ -28,6 +29,7 @@ const onHomeClick = () => {
   const item = refs.navList.querySelector('[data-action="home"]');
   item.classList.add('nav__item--current');
   refs.headerWrapper.innerHTML = homeHeaderMarkup;
+  addSearchFormListener();
   makeTrendingMovies();
   if (refs.header.classList.contains('lib')) {
     refs.header.classList.remove('lib');
@@ -35,6 +37,7 @@ const onHomeClick = () => {
 };
 
 const onLibClick = () => {
+  removeSearchFormListener();
   refs.headerWrapper.innerHTML = myLibraryHeaderMarkup;
   refs.header.classList.add('lib');
 };
@@ -97,10 +100,11 @@ const makeNavList = () => {
   }, '');
 
   refs.navList.innerHTML = markup;
+  refs.headerWrapper.innerHTML = homeHeaderMarkup;
   refs.navList.querySelector('[data-action="home"]').classList.add('nav__item--current');
   refs.navList.addEventListener('click', onNavListClick);
   refs.headerLogo.addEventListener('click', onHomeClick);
-  refs.headerWrapper.innerHTML = homeHeaderMarkup;
+  addSearchFormListener();
   refs.header.classList.remove('lib');
 };
 
