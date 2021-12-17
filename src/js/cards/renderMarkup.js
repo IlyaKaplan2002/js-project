@@ -17,16 +17,16 @@ function renderMarkup(films) {
     const posterUrl = poster_path ? `${MOVIE_POSTER_URL}${poster_path}` : '';
     acc += `<li class="card-set-item">
         <button type=button data-id='${id}'>
-            <img style='height:400px' src="${posterUrl}" alt="${original_title}" />
+            <img style='height:400px' src="${posterUrl}" alt="${original_title}" class="movie-poster-img" />
             <div>
-                <h2>
+                <h2 class="movie-title">
                     ${original_title}
                 </h2>
-                <p>
+                <p class="movie-info">
                     ${genres.join(', ')}
                     |
-                    ${release_date.split('-')[0]}
-                    ${vote_average}
+                    <span class="movie-genre">${release_date.split('-')[0]}</span>
+                    <span class="movie-rating">${vote_average.toFixed(1)}</span> 
                 </p>
             </div>       
         </button>
