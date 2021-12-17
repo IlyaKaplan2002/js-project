@@ -9,4 +9,9 @@ export const refs = {
   authBackdrop: document.querySelector('.auth-backdrop'),
   authModalClose: document.querySelector('.auth-modal__close'),
   trendingMovies: document.querySelector('.trending-movies-list'),
+  modalStudents: {
+    openButton: document.querySelector('.footer__button'),
+    closeButton: document.querySelector('.closeStudentsModal'),
+    backdrop: document.querySelector('.js-backdropStudents'),
+  },
 };
