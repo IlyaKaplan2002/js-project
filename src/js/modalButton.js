@@ -20,6 +20,7 @@ export const modals = ({ openButton, closeButton, backdrop }) => {
   };
 
   const openModal = e => {
+    if (e.target.nodeName === 'UL' || !e.target.closest('button')) return;
     backdrop.classList.add('is-open');
     document.addEventListener('keydown', onEscClick);
   };

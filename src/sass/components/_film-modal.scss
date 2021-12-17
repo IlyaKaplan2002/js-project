@@ -1,14 +1,14 @@
 .film-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
   padding: 20px;
 
-  width: 100vw;
-  height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: var(--backdrop-bg);
+  // width: 100vw;
+  // height: 100vh;
+  // margin-left: auto;
+  // margin-right: auto;
+  // background-color: var(--backdrop-bg);
  
   @media screen and (min-width: 768px) {
     padding: 231px 75px ;
@@ -58,21 +58,21 @@
   }
 }
 
-.modal__button-in {
-  position: absolute;
+// .modal__button-in {
+//   position: absolute;
 
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
+//   top: 10px;
+//   right: 10px;
+//   width: 30px;
+//   height: 30px;
 
-  stroke: var(--main-black);
+//   stroke: var(--main-black);
 
-  &:hover,
-  &:focus {
-    stroke: var(--header-links-accent);
-  }
-}
+//   &:hover,
+//   &:focus {
+//     stroke: var(--header-links-accent);
+//   }
+// }
 
 .cinema-card {
   @media screen and (min-width: 768px) {

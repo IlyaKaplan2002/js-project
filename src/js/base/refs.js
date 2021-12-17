@@ -10,6 +10,7 @@ export const refs = {
   authModalClose: document.querySelector('.auth-modal__close'),
   trendingMovies: document.querySelector('.trending-movies-list'),
   filmModal: {
-    
-  }
+    filmModalBackdrop: document.querySelector('.film-backdrop'),
+    filmModalCloseButton: document.querySelector('.modal__button-in'),
+  },
 };
