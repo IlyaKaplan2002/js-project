@@ -4,6 +4,7 @@ import { refs } from '../base/refs';
 import { store } from '../base/store';
 import { makeNavList } from './nav';
 import { Notify } from 'notiflix';
+import { makeTrendingMovies } from '../main/makeTrendingMovies';
 
 const signUp = e => {
   e.preventDefault();
@@ -16,7 +17,10 @@ const signUp = e => {
       localStorage.setItem('userId', JSON.stringify(res.data.localId));
       store.auth.isLoggedIn = true;
       store.auth.userId = res.data.localId;
+      store.movie.page = 1;
+      store.movie.query = '';
       makeNavList();
+      makeTrendingMovies();
 
       closeAuthModal();
       refs.authForm.reset();
