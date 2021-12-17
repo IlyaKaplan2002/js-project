@@ -15,7 +15,7 @@ function renderMarkup(films) {
     } = film;
 
     const posterUrl = poster_path ? `${MOVIE_POSTER_URL}${poster_path}` : '';
-    acc += `<li class="card-set-item">
+    acc += `<li class="card-set-item film-card">
         <button type=button data-id='${id}'>
             <img style='height:400px' src="${posterUrl}" alt="${original_title}" class="movie-poster-img" />
             <div>
