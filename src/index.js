@@ -7,6 +7,7 @@ import { matchGenresAndFilter } from './js/cards/matchGenres';
 import { renderMarkup } from './js/cards/renderMarkup';
 import {onOpenModalStudents} from './js/modalStudents';
 import { makeTrendingMovies } from './js/main/makeTrendingMovies';
+import {fetchWatchedFilms} from './js/api/firebase/fetchWatched';
 
 makeNavList();
 
