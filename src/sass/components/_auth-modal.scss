@@ -1,15 +1,5 @@
-.backdrop {
-  width: 100vw;
-  height: 100vh;
+.auth-backdrop {
   padding: 20px;
-  background-color: var(--backdrop-bg);
-  position: fixed;
-  left: 0;
-  top: 0;
-  transform: translateX(100%);
-  @include animation(transform);
-  display: flex;
-  justify-content: center;
 
   @media screen and (min-width: 768px) {
     padding: 230px 75px;
@@ -18,10 +8,6 @@
   @media screen and (min-width: 1024px) {
     padding: 100px 70px;
   }
-}
-
-.backdrop.is-open {
-  transform: translateX(0);
 }
 
 .auth-modal {
@@ -34,29 +20,6 @@
   &__title {
     @include font(700, 24px, 28px);
     margin-bottom: 15px;
-  }
-
-  &__close {
-    width: 30px;
-    height: 30px;
-    color: var(--main-black);
-    position: absolute;
-    right: 10px;
-    top: 10px;
-  }
-
-  &__close:hover {
-    color: var(--header-links-accent);
-    cursor: pointer;
-  }
-
-  &__icon-wrapper {
-    width: 30px;
-    height: 30px;
-  }
-
-  &__icon {
-    stroke: currentColor;
   }
 
   &__form {
