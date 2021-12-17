@@ -8,11 +8,7 @@
     padding-bottom: 60px;
   }
 }
-.film-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .movie-title {
   margin-bottom: 4px;
   color: var(--main-black);
@@ -22,7 +18,7 @@
 }
 .movie-poster-img {
   margin-bottom: 10px;
-  margin-right: 0;
+
   border-radius: 5px;
 }
 .movie-info {
