@@ -5,6 +5,7 @@ import { makeTrendingMovies } from '../main/makeTrendingMovies';
 import { onLogInClick } from './logIn';
 import { logOut } from './logOut';
 import { onSignUpClick } from './signUp';
+import { modals } from '../modalButton';
 
 const homeHeaderMarkup = `<form name="search" class="search">
       <input class="search__input" type="text" name="query" placeholder="Поиск фильмов" />
@@ -107,6 +108,18 @@ const makeNavList = () => {
   refs.headerLogo.addEventListener('click', onHomeClick);
   addSearchFormListener();
   refs.header.classList.remove('lib');
+  if (!store.auth.isLoggedIn) {
+    modals({
+      openButton: document.querySelector('[data-action="logIn"]'),
+      closeButton: refs.authModalClose,
+      backdrop: refs.authBackdrop,
+    });
+    modals({
+      openButton: document.querySelector('[data-action="signUp"]'),
+      closeButton: refs.authModalClose,
+      backdrop: refs.authBackdrop,
+    });
+  }
 };
 
 export { makeNavList };
