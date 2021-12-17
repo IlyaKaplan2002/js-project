@@ -6,10 +6,11 @@
 @import './base/global-styles';
 @import './base/container';
 @import './base/card-set';
+@import './utils/modal';
 
 @import './components/header';
 @import './components/auth-modal';
 @import './components/modal-students';
 @import './components/film-modal';
+@import './components/movie-container';
 @import './components/footer';
-@import './base/movie-conteiner';
