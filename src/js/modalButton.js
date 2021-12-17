@@ -1,4 +1,4 @@
-export const modals = ({ openButton, closeButton, backdrop }) => {
+const modals = ({ openButton, closeButton, backdrop, action = 'init' }) => {
   backdrop.classList.add('backdrop');
   closeButton.classList.add('modal__close');
   closeButton.querySelector('use').classList.add('modal__icon');
@@ -23,7 +23,14 @@ export const modals = ({ openButton, closeButton, backdrop }) => {
     backdrop.classList.add('is-open');
     document.addEventListener('keydown', onEscClick);
   };
+
+  if (action === 'close') {
+    closeModal();
+    return;
+  }
   openButton.addEventListener('click', openModal);
   closeButton.addEventListener('click', closeModal);
   backdrop.addEventListener('click', onBackdropClick);
 };
+
+export { modals };
