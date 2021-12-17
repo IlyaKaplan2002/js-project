@@ -7,4 +7,3 @@ import { fetchQueueFilms } from './js/api/firebase/fetchQueue';
 makeNavList();
 
 makeTrendingMovies();
-console.log(fetchQueueFilms());
