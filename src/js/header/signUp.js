@@ -5,7 +5,7 @@ import { store } from '../base/store';
 import { makeNavList } from './nav';
 import { Notify } from 'notiflix';
 import { makeTrendingMovies } from '../main/makeTrendingMovies';
-import { modals } from '../modalButton';
+import { modals } from '../modals';
 
 const signUp = e => {
   e.preventDefault();

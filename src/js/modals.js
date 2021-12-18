@@ -1,3 +1,5 @@
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+
 const modals = ({ openButton, closeButton, backdrop, action = 'init' }) => {
   backdrop.classList.add('backdrop');
   closeButton.classList.add('modal__close');
@@ -7,6 +9,7 @@ const modals = ({ openButton, closeButton, backdrop, action = 'init' }) => {
   const closeModal = e => {
     backdrop.classList.remove('is-open');
     document.removeEventListener('keydown', onEscClick);
+    enableBodyScroll(document.body);
   };
 
   const onEscClick = e => {
@@ -22,6 +25,7 @@ const modals = ({ openButton, closeButton, backdrop, action = 'init' }) => {
   const openModal = e => {
     backdrop.classList.add('is-open');
     document.addEventListener('keydown', onEscClick);
+    disableBodyScroll(document.body);
   };
 
   if (action === 'close') {

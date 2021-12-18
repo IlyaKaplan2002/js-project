@@ -3,7 +3,7 @@ import { logInFetch } from '../api/auth/authAPI';
 import { refs } from '../base/refs';
 import { store } from '../base/store';
 import { makeTrendingMovies } from '../main/makeTrendingMovies';
-import { modals } from '../modalButton';
+import { modals } from '../modals';
 import { closeAuthModal, openAuthModal } from './authModal';
 import { makeNavList } from './nav';
 
