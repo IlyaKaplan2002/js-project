@@ -1,8 +1,10 @@
 import { Notify } from 'notiflix';
 import { logInFetch } from '../api/auth/authAPI';
 import { refs } from '../base/refs';
+import { removeLoader } from '../base/reloader';
 import { store } from '../base/store';
 import { makeTrendingMovies } from '../main/makeTrendingMovies';
+import { modals } from '../modals';
 import { closeAuthModal, openAuthModal } from './authModal';
 import { makeNavList } from './nav';
 
@@ -23,13 +25,26 @@ const logIn = e => {
       makeTrendingMovies();
 
       closeAuthModal();
+      modals({
+        openButton: document.querySelector('[data-action="logIn"]'),
+        closeButton: refs.authModalClose,
+        backdrop: refs.authBackdrop,
+        action: 'close',
+      });
       refs.authForm.reset();
     })
     .catch(err => {
       Notify.failure(err.response.data.error.message);
 
       closeAuthModal();
-    });
+      modals({
+        openButton: document.querySelector('[data-action="logIn"]'),
+        closeButton: refs.authModalClose,
+        backdrop: refs.authBackdrop,
+        action: 'close',
+      });
+    })
+    .finally(() => removeLoader());
 };
 
 const onLogInClick = () => {

@@ -1,4 +1,7 @@
 export const refs = {
+  main: document.querySelector('.main'),
+  footer: document.querySelector('.footer'),
+  themeCheckbox: document.querySelector('.theme-checkbox'),
   headerLogo: document.querySelector('.logo'),
   navList: document.querySelector('.navList'),
   headerWrapper: document.querySelector('.headerWrapper'),
@@ -20,5 +23,10 @@ export const refs = {
     filmModalOriginalTitle: document.querySelector('.info-data4'),
     filmModalGenre: document.querySelector('.info-data5'),
     filmModalAbout: document.querySelector('.info-data6'),
+  },
+  modalStudents: {
+    openButton: document.querySelector('.footer__button'),
+    closeButton: document.querySelector('.closeStudentsModal'),
+    backdrop: document.querySelector('.js-backdropStudents'),
   },
 };

@@ -1,18 +1,24 @@
 .main {
-  padding-top: 20px;
+  padding-top: 50px;
   padding-bottom: 40px;
+  position: relative;
 
   @include mq(tablet) {
     min-width: var(--tablet);
     padding-top: 60px;
     padding-bottom: 60px;
   }
+
+  @include animation2(--main-black, background-color);
+
+  &.dark {
+    --header-links: var(--header-links-reversed);
+    --main-black: var(--main-black-reversed);
+    --toggler-bg: var(--toggler-bg-reversed);
+    background-color: var(--header-links);
+  }
 }
-.film-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .movie-title {
   margin-bottom: 4px;
   color: var(--main-black);
@@ -22,7 +28,7 @@
 }
 .movie-poster-img {
   margin-bottom: 10px;
-  margin-right: 0;
+
   border-radius: 5px;
 }
 .movie-info {
