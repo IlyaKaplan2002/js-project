@@ -3,9 +3,8 @@ import { FIREBASE_BASE_URL } from '../apiBaseURLs';
 import { store } from '../../base/store';
 import { loader } from '../../base/reloader';
 
-export const fetchWatchedFilms = () => {
+export const delQueueFilms = ({Id}) => {
   const userId = store.auth.userId;
   loader();
-  return axios.get(`${FIREBASE_BASE_URL}/watched/${userId}.json`);
+  return axios.delete(`${FIREBASE_BASE_URL}/queue/${userId}/${Id}.json`);
 };
-

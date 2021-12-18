@@ -6,6 +6,8 @@ import { onLogInClick } from './logIn';
 import { logOut } from './logOut';
 import { onSignUpClick } from './signUp';
 import { modals } from '../modals';
+import { fetchQueueFilms } from '../api/firebase/fetchQueue'
+import { fetchWatchedFilms } from '../api/firebase/fetchWatched'
 
 const homeHeaderMarkup = `<form name="search" class="search">
       <input class="search__input" type="text" name="query" placeholder="Поиск фильмов" />
@@ -45,6 +47,24 @@ const onLibClick = () => {
   refs.header.classList.add('lib');
 };
 
+const onWatched = () =>{
+  fetchWatchedFilms()
+    .then(data => matchGenresAndFilter(data))
+    .then(renderMarkup)
+    .catch(err => Notify.failure(err.message))
+    .finally(() => removeLoader());
+  removeMarkup();
+}
+
+const onQueue = () =>{
+  fetchQueueFilms()
+    .then(data => matchGenresAndFilter(data))
+    .then(renderMarkup)
+    .catch(err => Notify.failure(err.message))
+    .finally(() => removeLoader());
+  removeMarkup();
+}
+
 const onNavListClick = e => {
   if (!e.target.classList.contains('nav__button')) return;
 
@@ -75,6 +95,14 @@ const onNavListClick = e => {
     case 'logOut':
       logOut();
       break;
+
+      case 'watched':
+        onWatched();
+        break;
+
+      case 'watched':
+        onQueue();
+        break; 
 
     default:
       refs.headerWrapper.innerHTML = homeHeaderMarkup;
