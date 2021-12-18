@@ -7,6 +7,12 @@
     padding-top: 60px;
     padding-bottom: 60px;
   }
+
+  &.dark {
+    --header-links: var(--header-links-reversed);
+    --main-black: var(--main-black-reversed);
+    background-color: var(--header-links);
+  }
 }
 
 .movie-title {

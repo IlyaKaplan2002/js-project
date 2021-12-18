@@ -1,8 +1,12 @@
 .footer {
   background: var(--pag-button-bg);
 
+  &.dark {
+    --footer-text: var(--header-links);
+    background-color: var(--backdrop-bg);
+  }
+
   &__wrapper {
-    background: var(--pag-button-bg);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -37,7 +41,6 @@
   &__button {
     margin-left: 3px;
     cursor: pointer;
-    background-color: var(--pag-button-bg);
     color: var(--footer-text);
     @include font(normal, 14px, 16px);
     display: flex;
