@@ -1,4 +1,7 @@
 export const refs = {
+  main: document.querySelector('.main'),
+  footer: document.querySelector('.footer'),
+  themeCheckbox: document.querySelector('.theme-checkbox'),
   headerLogo: document.querySelector('.logo'),
   navList: document.querySelector('.navList'),
   headerWrapper: document.querySelector('.headerWrapper'),
