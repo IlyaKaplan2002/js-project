@@ -3,7 +3,7 @@
 
   &.dark {
     --footer-text: var(--header-links);
-    background-color: var(--backdrop-bg);
+    background-color: var(--footer-bg-dark);
   }
 
   &__wrapper {
