@@ -3,9 +3,11 @@ import { matchGenresAndFilter } from '../cards/matchGenres';
 import { fetchOneMovie } from '/js/api/movie/fetchOneMovie';
 import { MOVIE_POSTER_URL } from '../api/apiBaseURLs';
 import { removeLoader } from '../base/reloader';
+import { store } from '../base/store';
 
 const renderOneMovie = film => {
   const {
+    id,
     poster_path,
     original_title = 'Unknown',
     genres = ['movie'],
@@ -15,6 +17,15 @@ const renderOneMovie = film => {
     popularity,
     vote_count,
   } = film[0];
+
+  const isLoggedIn = store.auth.isLoggedIn;
+
+  if (isLoggedIn) {
+    refs.filmModal.filmModalButtons.dataset.filmid = id;
+    refs.filmModal.filmModalButtons.classList.remove('visually-hidden');
+  } else {
+    refs.filmModal.filmModalButtons.classList.add('visually-hidden');
+  }
 
   const poster = poster_path ? `${MOVIE_POSTER_URL}${poster_path}` : '';
 

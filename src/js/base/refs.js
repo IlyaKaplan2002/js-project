@@ -23,6 +23,7 @@ export const refs = {
     filmModalOriginalTitle: document.querySelector('.info-data4'),
     filmModalGenre: document.querySelector('.info-data5'),
     filmModalAbout: document.querySelector('.info-data6'),
+    filmModalButtons: document.querySelector('.modal__button-add'),
   },
   modalStudents: {
     openButton: document.querySelector('.footer__button'),
