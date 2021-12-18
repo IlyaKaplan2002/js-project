@@ -2,7 +2,7 @@
   padding: 20px;
 
   @media screen and (min-width: 768px) {
-    padding: 230px 75px;
+    padding: 25vh 75px;
   }
 
   @media screen and (min-width: 1024px) {
@@ -17,6 +17,7 @@
   padding: 50px 50px 40px;
   border-radius: 14px;
   width: 400px;
+  overflow: auto;
 
   &__title {
     @include font(700, 24px, 28px);

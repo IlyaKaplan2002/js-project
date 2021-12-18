@@ -31,6 +31,7 @@ const onHomeClick = () => {
   item.classList.add('nav__item--current');
   refs.headerWrapper.innerHTML = homeHeaderMarkup;
   store.movie.page = 1;
+  store.movie.query = '';
   addSearchFormListener();
   makeTrendingMovies();
   if (refs.header.classList.contains('lib')) {
