@@ -8,7 +8,9 @@ export { fetchTrendingMovies };
 
 function fetchTrendingMovies() {
   const page = store.movie.page;
-  loader(refs.trendingMovies)
+
+  loader();
+
   return axios
     .get(`${MOVIE_BASE_URL}trending/movie/day?api_key=${MOVIE_API}&page=${page}`)
     .then(res => {

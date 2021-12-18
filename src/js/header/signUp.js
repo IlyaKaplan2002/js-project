@@ -6,6 +6,7 @@ import { makeNavList } from './nav';
 import { Notify } from 'notiflix';
 import { makeTrendingMovies } from '../main/makeTrendingMovies';
 import { modals } from '../modals';
+import { removeLoader } from '../base/reloader';
 
 const signUp = e => {
   e.preventDefault();
@@ -42,7 +43,8 @@ const signUp = e => {
         backdrop: refs.authBackdrop,
         action: 'close',
       });
-    });
+    })
+    .finally(() => removeLoader());
 };
 
 const onSignUpClick = () => {

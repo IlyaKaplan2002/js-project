@@ -1,6 +1,7 @@
 import { Notify } from 'notiflix';
 import { logInFetch } from '../api/auth/authAPI';
 import { refs } from '../base/refs';
+import { removeLoader } from '../base/reloader';
 import { store } from '../base/store';
 import { makeTrendingMovies } from '../main/makeTrendingMovies';
 import { modals } from '../modals';
@@ -42,7 +43,8 @@ const logIn = e => {
         backdrop: refs.authBackdrop,
         action: 'close',
       });
-    });
+    })
+    .finally(() => removeLoader());
 };
 
 const onLogInClick = () => {
