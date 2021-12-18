@@ -1,24 +1,16 @@
 .film-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
   padding: 20px;
 
-  width: 100vw;
-  height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: var(--backdrop-bg);
- 
   @media screen and (min-width: 768px) {
-    padding: 231px 75px ;
-
+    padding: 231px 75px;
   }
-   @media screen and (min-width: 1024px) {
-    padding: 100px 71px ;
-
+  @media screen and (min-width: 1024px) {
+    padding: 100px 71px;
   }
+}
 
+.cinema__image {
+  width: 400px;
 }
 
 .film-modal {
@@ -28,7 +20,6 @@
   top: 50%;
   transform: translate(-50%, -50%);
 
-  // max-width: calc(100% - 40px);
   width: 280px;
   padding: 48px 20px 41px 20px;
 
@@ -37,40 +28,16 @@
     overflow: auto;
   }
 
-  // margin-left: auto;
-  // margin-right: auto;
-
   background: var(--header-links);
-  
 
   @media screen and (min-width: 768px) {
-    // left: 75px;
-    // top: 230px;
     width: 618px;
     padding: 42px 30px 40px 28px;
   }
 
   @media screen and (min-width: 1024px) {
-    // left: 71px;
-    // top: 100px;
     width: 882px;
     padding: 50px 30px 40px 30px;
-  }
-}
-
-.modal__button-in {
-  position: absolute;
-
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
-
-  stroke: var(--main-black);
-
-  &:hover,
-  &:focus {
-    stroke: var(--header-links-accent);
   }
 }
 
@@ -86,8 +53,6 @@
   margin-bottom: 30px;
   border-radius: 5px;
   object-fit: cover;
-
-  
 
   @media screen and (min-width: 768px) {
     width: 264px;
@@ -107,13 +72,7 @@
 }
 
 .info-name {
-
-  @include font(500,12px,16px);
-  // font-family: Roboto;
-  // font-style: normal;
-  // font-weight: 500;
-  // font-size: 12px;
-  // line-height: 1.33;
+  @include font(500, 12px, 16px);
 
   color: #8c8c8c;
 }
@@ -121,19 +80,12 @@
 .info-item1 {
   margin-bottom: 20px;
 
- @include font(500,20px,23px);
-  // font-family: Roboto;
-  // font-style: normal;
-  // font-weight: 500;
-  // font-size: 20px;
-  // line-height: 1.15;
+  @include font(500, 20px, 23px);
 
   text-transform: uppercase;
 
   @media screen and (min-width: 1024px) {
-    @include font(500,30px,35px);
-    // font-size: 30px;
-    // line-height: 1.17;
+    @include font(500, 30px, 35px);
   }
 }
 
@@ -163,12 +115,7 @@
   border-radius: 5px;
   border: none;
 
-@include font(500,12px,14.06px);
-  // font-family: Roboto;
-  // font-style: normal;
-  // font-weight: 500;
-  // font-size: 12px;
-  // line-height: 1.17;
+  @include font(500, 12px, 14.06px);
 
   align-items: center;
   text-align: center;
@@ -188,12 +135,7 @@
   border-radius: 5px;
   border: none;
 
-  @include font(500,12px,14.06px);
-  // font-family: Roboto;
-  // font-style: normal;
-  // font-weight: 500;
-  // font-size: 12px;
-  // line-height: 1.17;
+  @include font(500, 12px, 14.06px);
 
   align-items: center;
   text-align: center;
@@ -215,12 +157,7 @@
 .info-data3 {
   margin-left: 53px;
 
-  @include font(500,12px,14.06px);
-  // font-family: Roboto;
-  // font-style: normal;
-  // font-weight: 500;
-  // font-size: 12px;
-  // line-height: 1.17;
+  @include font(500, 12px, 14.06px);
 
   text-transform: uppercase;
 
@@ -239,12 +176,7 @@
 .info-data4 {
   margin-left: 39px;
 
-  @include font(500,12px,16px);
-  // font-family: Roboto;
-  // font-style: normal;
-  // font-weight: 500;
-  // font-size: 12px;
-  // line-height: 1.33;
+  @include font(500, 12px, 16px);
 
   text-transform: uppercase;
 
@@ -263,12 +195,7 @@
 .info-data5 {
   margin-left: 76px;
 
-  @include font(500,12px,16px);
-  // font-family: Roboto;
-  // font-style: normal;
-  // font-weight: 500;
-  // font-size: 12px;
-  // line-height: 1.33;
+  @include font(500, 12px, 16px);
 
   @media screen and (min-width: 1024px) {
     margin-left: 120px;
@@ -284,26 +211,15 @@
 
 .info-item6 .info-name {
   margin-bottom: 10px;
- 
-  @include font(500,12px,16px);
-  // font-family: Roboto;
-  // font-style: normal;
-  // font-weight: 500;
-  // font-size: 12px;
-  // line-height: 1.33;
+
+  @include font(500, 12px, 16px);
 
   text-transform: uppercase;
   color: var(--main-black);
 }
 
 .info-data6 {
-
-   @include font();
-  // font-family: Roboto;
-  // font-style: normal;
-  // font-weight: 500;
-  // font-size: 12px;
-  // line-height: 1.67;
+  @include font();
 }
 
 .modal__button-add {
@@ -320,7 +236,7 @@
   }
 }
 
-.add-to-watched {
+.film-modal-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -330,48 +246,41 @@
 
   padding-left: 8.28px;
   padding-right: 8.28px;
-  border: none;
   border-radius: 5px;
 
-  @include font(500,12px,16px);
-  // font-family: Roboto;
-  // font-style: normal;
-  // font-weight: 500;
-  // font-size: 12px;
-  // line-height: 1.33;
+  @include font(500, 12px, 16px);
   text-transform: uppercase;
-
-  background-color: var(--header-links-accent);
-  color: var(--header-links);
+  cursor: pointer;
+  @include animation2(background-color, color);
 
   @media screen and (min-width: 768px) {
     width: 125px;
     height: 44px;
+  }
+}
+
+.add-to-watched {
+  background-color: var(--header-links-accent);
+  color: var(--header-links);
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: var(--main-black);
+    background-color: var(--header-links);
+    color: var(--main-black);
+  }
+
+  @media screen and (min-width: 768px) {
     margin-right: 14.94px;
   }
 }
 
 .add-to-queue {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 112.58px;
-  height: 64px;
-
   border: 1px solid var(--main-black);
-  border-radius: 5px;
 
-  @include font(500,12px,16px);
-  // font-family: Roboto;
-  // font-style: normal;
-  // font-weight: 500;
-  // font-size: 12px;
-  // line-height: 1.33;
-  text-transform: uppercase;
-
-  @media screen and (min-width: 768px) {
-    width: 125px;
-    height: 44px;
+  &:hover {
+    border-color: transparent;
+    background-color: var(--header-links-accent);
+    color: var(--header-links);
   }
 }

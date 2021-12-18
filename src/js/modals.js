@@ -23,6 +23,7 @@ const modals = ({ openButton, closeButton, backdrop, action = 'init' }) => {
   };
 
   const openModal = e => {
+    if (e.target.nodeName === 'UL' || !e.target.closest('button')) return;
     backdrop.classList.add('is-open');
     document.addEventListener('keydown', onEscClick);
     disableBodyScroll(document.body);

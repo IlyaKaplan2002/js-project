@@ -12,6 +12,18 @@ export const refs = {
   authBackdrop: document.querySelector('.auth-backdrop'),
   authModalClose: document.querySelector('.auth-modal__close'),
   trendingMovies: document.querySelector('.trending-movies-list'),
+  filmModal: {
+    filmModalBackdrop: document.querySelector('.film-backdrop'),
+    filmModalCloseButton: document.querySelector('.modal__button-in'),
+    filmModalImage: document.querySelector('.cinema__image'),
+    filmModalTitle: document.querySelector('.info-data1'),
+    filmModalVote: document.querySelector('.info-data2-acent1'),
+    filmModalVotes: document.querySelector('.info-data2-acent2'),
+    filmModalPopularity: document.querySelector('.info-data3'),
+    filmModalOriginalTitle: document.querySelector('.info-data4'),
+    filmModalGenre: document.querySelector('.info-data5'),
+    filmModalAbout: document.querySelector('.info-data6'),
+  },
   modalStudents: {
     openButton: document.querySelector('.footer__button'),
     closeButton: document.querySelector('.closeStudentsModal'),
