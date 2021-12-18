@@ -5,7 +5,7 @@ import { makeTrendingMovies } from '../main/makeTrendingMovies';
 import { onLogInClick } from './logIn';
 import { logOut } from './logOut';
 import { onSignUpClick } from './signUp';
-import { modals } from '../modalButton';
+import { modals } from '../modals';
 
 const homeHeaderMarkup = `<form name="search" class="search">
       <input class="search__input" type="text" name="query" placeholder="Поиск фильмов" />
@@ -31,6 +31,7 @@ const onHomeClick = () => {
   item.classList.add('nav__item--current');
   refs.headerWrapper.innerHTML = homeHeaderMarkup;
   store.movie.page = 1;
+  store.movie.query = '';
   addSearchFormListener();
   makeTrendingMovies();
   if (refs.header.classList.contains('lib')) {

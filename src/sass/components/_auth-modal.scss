@@ -2,7 +2,7 @@
   padding: 20px;
 
   @media screen and (min-width: 768px) {
-    padding: 230px 75px;
+    padding: 25vh 75px;
   }
 
   @media screen and (min-width: 1024px) {
@@ -11,11 +11,13 @@
 }
 
 .auth-modal {
-  max-height: 310px;
+  max-height: 350px;
   background-color: var(--header-links);
   position: relative;
   padding: 50px 50px 40px;
   border-radius: 14px;
+  width: 400px;
+  overflow: auto;
 
   &__title {
     @include font(700, 24px, 28px);
@@ -41,6 +43,8 @@
   &__input {
     width: 100%;
     margin-top: 5px;
+    padding: 5px 10px;
+    @include font();
   }
 
   &__submit-btn {

@@ -1,6 +1,9 @@
 import { store } from '../base/store';
 
 const matchGenresAndFilter = films => {
+  if (films.length === 0) {
+    throw Error(`Sorry, we can't find films on this query!`);
+  }
   for (const film of films) {
     if (film.genres) {
       film.genres = film.genres.map(genre => genre.name);

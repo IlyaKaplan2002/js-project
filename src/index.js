@@ -2,24 +2,29 @@ import './sass/main.scss';
 
 import { makeNavList } from './js/header/nav';
 
-import { fetchTrendingMovies } from './js/api/movie/fetchTrendingMovies';
-import { matchGenresAndFilter } from './js/cards/matchGenres';
-import { renderMarkup } from './js/cards/renderMarkup';
-import {onOpenModalStudents} from './js/modalStudents';
 import { makeTrendingMovies } from './js/main/makeTrendingMovies';
-import {fetchWatchedFilms} from './js/api/firebase/fetchWatched';
-import {refs} from './js/base/refs'
+
+import { onFilmsListClick } from './js/modalFilm/modalFilmAction';
+import { modals } from './js/modals';
+import { refs } from './js/base/refs';
+import { removeLoader } from './js/base/reloader';
+import { checkTheme, onThemeInput } from './js/main/themes';
+
+window.onload = removeLoader;
 
 makeNavList();
 
 makeTrendingMovies();
 
-// import { modals } from './js/modalButton';
+modals({
+  openButton: refs.trendingMovies,
+  closeButton: refs.filmModal.filmModalCloseButton,
+  backdrop: refs.filmModal.filmModalBackdrop,
+});
 
-// const openButton= document.querySelector('.footer__button');
-// const closeButton=document.querySelector('.closeModal');
-// const backdrop=document.querySelector('.js-backdropStudents') ;
-// // modals (document.querySelector('.footer__button'), document.querySelector('.closeModal'), document.querySelector('.js-backdropStudents'));
-// // modals (openButton,  closeButton,backdrop);
-// // modals (document.querySelector('.footer__button'), document.querySelector('.closeModal'), document.querySelector('.js-backdropStudents'));
-modals (refs.openButtonStudents,refs.closeButtonStudents,refs.backdropStudents);
+refs.trendingMovies.addEventListener('click', onFilmsListClick);
+modals(refs.modalStudents);
+
+refs.themeCheckbox.addEventListener('input', onThemeInput);
+
+checkTheme();
