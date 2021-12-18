@@ -1,5 +1,6 @@
 .footer {
   background: var(--pag-button-bg);
+  @include animation2(--footer-text, background-color);
 
   &.dark {
     --footer-text: var(--header-links);
