@@ -48,6 +48,8 @@
     // top: 230px;
     width: 618px;
     padding: 42px 30px 40px 28px;
+
+    
   }
 
   @media screen and (min-width: 1024px) {
@@ -262,7 +264,7 @@
 
 .info-data5 {
   margin-left: 76px;
-
+  
   @include font(500,12px,16px);
   // font-family: Roboto;
   // font-style: normal;

@@ -1,21 +1,33 @@
+import { refs } from '../base/refs';
 import { matchGenresAndFilter } from '../cards/matchGenres';
 import { fetchOneMovie } from '/js/api/movie/fetchOneMovie';
+import { MOVIE_POSTER_URL } from '../api/apiBaseURLs';
 
 const renderOneMovie = film => {
   const {
-    id,
     poster_path,
     original_title = 'Unknown',
     genres = ['movie'],
-    release_date = 'Unknown-date',
     vote_average = 'Unknown',
     title,
     overview,
     popularity,
     vote_count,
-  } = film;
-
+  } = film[0];
+  
   const poster = poster_path ? `${MOVIE_POSTER_URL}${poster_path}` : '';
+
+  refs.filmModal.filmModalImage.setAttribute('src', `${poster}`);
+  refs.filmModal.filmModalImage.setAttribute('alt', `${original_title}`);
+  refs.filmModal.filmModalTitle.textContent = `${title}`;
+  refs.filmModal.filmModalVote.textContent = `${vote_average}`;
+  refs.filmModal.filmModalVotes.textContent = `${vote_count}`;
+  refs.filmModal.filmModalPopularity.textContent = `${popularity.toFixed(1)}`;
+  refs.filmModal.filmModalOriginalTitle.textContent = `${original_title}`;
+  refs.filmModal.filmModalGenre.textContent = `${genres}`;
+  refs.filmModal.filmModalAbout.textContent = `${overview}`;
+
+
 };
 
 const onFilmsListClick = e => {
