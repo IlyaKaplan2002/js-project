@@ -1,0 +1,98 @@
+.modal-students {
+  padding: 20px;
+  width: 75vw;
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+
+  background-color: white;
+  @include mq(mobile) {
+    max-width: var(--mobile);
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @include mq(tablet) {
+    max-width: var(--tablet);
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+  @include mq(desktop) {
+    max-width: var(--desktop);
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+.modal-title {
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
+.text-for-team {
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 15px;
+}
+.text-for-stydents {
+  margin-bottom: 10px;
+  color: var(--modal-second-text);
+}
+
+.feature-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .feature-list__greed:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+.feature-list {
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 767px) {
+  .feature-list__greed {
+    flex-basis: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .feature-list {
+    flex-wrap: wrap;
+    margin-top: -30px;
+    margin-left: -30px;
+  }
+  .feature-list__greed {
+    flex-basis: calc(100% / 2 - 30px);
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .feature-list__greed {
+    flex-basis: calc(100% / 4 - 30px);
+  }
+}
+
+.feature-list__title {
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.centre {
+  text-align: center;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}

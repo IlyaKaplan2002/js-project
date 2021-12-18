@@ -5,6 +5,7 @@ import { store } from '../base/store';
 import { makeNavList } from './nav';
 import { Notify } from 'notiflix';
 import { makeTrendingMovies } from '../main/makeTrendingMovies';
+import { modals } from '../modals';
 
 const signUp = e => {
   e.preventDefault();
@@ -23,12 +24,24 @@ const signUp = e => {
       makeTrendingMovies();
 
       closeAuthModal();
+      modals({
+        openButton: document.querySelector('[data-action="signUp"]'),
+        closeButton: refs.authModalClose,
+        backdrop: refs.authBackdrop,
+        action: 'close',
+      });
       refs.authForm.reset();
     })
     .catch(err => {
       Notify.failure(err.response.data.error.message);
 
       closeAuthModal();
+      modals({
+        openButton: document.querySelector('[data-action="signUp"]'),
+        closeButton: refs.authModalClose,
+        backdrop: refs.authBackdrop,
+        action: 'close',
+      });
     });
 };
 
