@@ -1,5 +1,6 @@
 import { refs } from '../base/refs';
 import { store } from '../base/store';
+import { scrollUp } from '../scrollUp';
 import { makeFilms } from './makeFilms';
 import { makeTrendingMovies } from './makeTrendingMovies';
 
@@ -46,6 +47,8 @@ const onArrowClick = e => {
   if (!store.movie.query) {
     makeTrendingMovies();
   } else makeFilms();
+
+  scrollUp();
 };
 
 const onPagListClick = e => {
@@ -66,6 +69,8 @@ const onPagListClick = e => {
   if (!store.movie.query) {
     makeTrendingMovies();
   } else makeFilms();
+
+  scrollUp();
 };
 
 const addMobilePoints = () => {
