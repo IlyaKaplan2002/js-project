@@ -6,6 +6,5 @@ import { loader } from '../../base/reloader';
 export const fetchWatchedFilms = () => {
   const userId = store.auth.userId;
   loader();
-  return axios.get(`${FIREBASE_BASE_URL}/watched/${userId}.json`);
+  return axios.get(`${FIREBASE_BASE_URL}watched/${userId}.json`).then(res => res.data);
 };
-

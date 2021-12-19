@@ -6,8 +6,10 @@ import { onLogInClick } from './logIn';
 import { logOut } from './logOut';
 import { onSignUpClick } from './signUp';
 import { modals } from '../modals';
-import { fetchQueueFilms } from '../api/firebase/fetchQueue'
-import { fetchWatchedFilms } from '../api/firebase/fetchWatched'
+import { makeWatched } from '../main/makeWatched';
+import { onFilterButtonClick } from './onFilterButtonClick';
+// import { fetchQueueFilms } from '../api/firebase/fetchQueue'
+// import { fetchWatchedFilms } from '../api/firebase/fetchWatched'
 
 const homeHeaderMarkup = `<form name="search" class="search">
       <input class="search__input" type="text" name="query" placeholder="Поиск фильмов" />
@@ -20,10 +22,10 @@ const homeHeaderMarkup = `<form name="search" class="search">
     </form>`;
 
 const myLibraryHeaderMarkup = `<ul class="filter">
-      <li class="filter__item filter__item--current">
-        <button class="filter__button">watched</button>
+      <li class="filter__item">
+        <button data-filteraction='watched' class="filter__button">watched</button>
       </li>
-      <li class="filter__item"><button class="filter__button">queue</button></li>
+      <li class="filter__item"><button data-filteraction='queue' class="filter__button">queue</button></li>
     </ul>`;
 
 const onHomeClick = () => {
@@ -36,6 +38,7 @@ const onHomeClick = () => {
   store.movie.query = '';
   addSearchFormListener();
   makeTrendingMovies();
+  document.querySelector('.filter').removeEventListener('click', onFilterButtonClick);
   if (refs.header.classList.contains('lib')) {
     refs.header.classList.remove('lib');
   }
@@ -45,25 +48,13 @@ const onLibClick = () => {
   removeSearchFormListener();
   refs.headerWrapper.innerHTML = myLibraryHeaderMarkup;
   refs.header.classList.add('lib');
+  document
+    .querySelector(`[data-filteraction='watched']`)
+    .closest('li')
+    .classList.add('filter__item--current');
+  makeWatched();
+  document.querySelector('.filter').addEventListener('click', onFilterButtonClick);
 };
-
-const onWatched = () =>{
-  fetchWatchedFilms()
-    .then(data => matchGenresAndFilter(data))
-    .then(renderMarkup)
-    .catch(err => Notify.failure(err.message))
-    .finally(() => removeLoader());
-  removeMarkup();
-}
-
-const onQueue = () =>{
-  fetchQueueFilms()
-    .then(data => matchGenresAndFilter(data))
-    .then(renderMarkup)
-    .catch(err => Notify.failure(err.message))
-    .finally(() => removeLoader());
-  removeMarkup();
-}
 
 const onNavListClick = e => {
   if (!e.target.classList.contains('nav__button')) return;
@@ -95,14 +86,6 @@ const onNavListClick = e => {
     case 'logOut':
       logOut();
       break;
-
-      case 'watched':
-        onWatched();
-        break;
-
-      case 'watched':
-        onQueue();
-        break; 
 
     default:
       refs.headerWrapper.innerHTML = homeHeaderMarkup;

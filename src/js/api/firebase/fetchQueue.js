@@ -6,5 +6,5 @@ import { loader } from '../../base/reloader';
 export const fetchQueueFilms = () => {
   const userId = store.auth.userId;
   loader();
-  return axios.get(`${FIREBASE_BASE_URL}queue/${userId}.json`);
+  return axios.get(`${FIREBASE_BASE_URL}queue/${userId}.json`).then(res => res.data);
 };
