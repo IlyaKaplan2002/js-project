@@ -1,11 +1,14 @@
 .film-backdrop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
 
   @media screen and (min-width: 768px) {
-    padding: 231px 75px;
+    padding: 200px 50px;
   }
   @media screen and (min-width: 1024px) {
-    padding: 100px 71px;
+    padding: 100px 70px;
   }
 }
 
@@ -14,30 +17,24 @@
 }
 
 .film-modal {
-  position: absolute;
+  position: relative;
 
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 280px;
   padding: 48px 20px 41px 20px;
-
-  @media screen and (max-width: 767px) {
-    max-height: calc(100% - 40px);
-    overflow: auto;
-  }
+  overflow: auto;
+  max-height: calc(100vh - 40px);
+  max-width: 280px;
 
   background: var(--header-links);
 
   @media screen and (min-width: 768px) {
-    width: 618px;
+    max-width: 618px;
     padding: 42px 30px 40px 28px;
   }
 
   @media screen and (min-width: 1024px) {
-    width: 882px;
+    max-width: 882px;
     padding: 50px 30px 40px 30px;
+    overflow: hidden;
   }
 }
 
@@ -48,15 +45,15 @@
 }
 .cinema__image {
   width: 240px;
-  height: 357px;
-
+  max-height: 357px;
+  display: block;
   margin-bottom: 30px;
   border-radius: 5px;
   object-fit: cover;
 
   @media screen and (min-width: 768px) {
     width: 264px;
-    height: 373.55px;
+    max-height: 373.55px;
 
     margin-bottom: 0px;
     margin-right: 32px;
@@ -64,9 +61,8 @@
 
   @media screen and (min-width: 1024px) {
     width: 396px;
-    height: 477.8px;
+    max-height: 477.8px;
 
-    margin-bottom: 0px;
     margin-right: 30px;
   }
 }
@@ -187,15 +183,16 @@
 
 .info-item5 {
   display: flex;
-  align-items: baseline;
+  // align-items: start;
 
   margin-bottom: 20px;
 }
 
 .info-data5 {
   margin-left: 76px;
-
+  word-wrap: break-word;
   @include font(500, 12px, 16px);
+  max-width: 110px;
 
   @media screen and (min-width: 1024px) {
     margin-left: 120px;
