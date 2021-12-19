@@ -1,11 +1,13 @@
+.backdrop-students {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .modal-students {
   padding: 20px;
   width: 75vw;
-  height: 100vh;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+
   overflow-y: auto;
 
   background-color: white;
@@ -27,8 +29,8 @@
 }
 
 .modal-title {
-  text-align: center;  
-  line-height: 1.1;  
+  text-align: center;
+  line-height: 1.1;
   text-transform: uppercase;
   margin-bottom: 10px;
   color: var(--main-black);
@@ -39,16 +41,16 @@
 
 .text-for-team {
   text-align: center;
-  font-size: 20px;  
-  line-height: 1.1;  
+  font-size: 20px;
+  line-height: 1.1;
   text-transform: uppercase;
   margin-bottom: 10px;
   color: var(--main-black);
   @include font(500, 12px, 14px);
-  font-size: 15px; 
+  font-size: 15px;
 }
 
-.text-for-stydents {  
+.text-for-stydents {
   @include mq(tablet) {
     padding-right: 20px;
   }
@@ -99,11 +101,11 @@
 
 .feature-list__title {
   font-weight: bold;
-  line-height: 1.1;  
+  line-height: 1.1;
   text-transform: uppercase;
   margin-bottom: 4px;
   color: var(--main-black);
-  @include font(500, 12px, 14px); 
+  @include font(500, 12px, 14px);
 }
 
 .centre {
@@ -112,12 +114,10 @@
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
-.photo
-{
+.photo {
   border-radius: 5px 5px 0px 0px;
 }
 
-.feature-list__comands
-{
+.feature-list__comands {
   padding: 5px 5px 10px 5px;
 }
