@@ -8,8 +8,6 @@ import { onSignUpClick } from './signUp';
 import { modals } from '../modals';
 import { makeWatched } from '../main/makeWatched';
 import { onFilterButtonClick } from './onFilterButtonClick';
-// import { fetchQueueFilms } from '../api/firebase/fetchQueue'
-// import { fetchWatchedFilms } from '../api/firebase/fetchWatched'
 
 const homeHeaderMarkup = `<form name="search" class="search">
       <input class="search__input" type="text" name="query" placeholder="Поиск фильмов" />
