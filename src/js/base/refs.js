@@ -24,6 +24,9 @@ export const refs = {
     filmModalGenre: document.querySelector('.info-data5'),
     filmModalAbout: document.querySelector('.info-data6'),
     filmModalButtons: document.querySelector('.modal__button-add'),
+    addToWatched: document.querySelector('.add-to-watched'),
+    addToQueue: document.querySelector('.add-to-queue'),
+    delete: document.querySelector('.delete'),
   },
   modalStudents: {
     openButton: document.querySelector('.footer__button'),

@@ -12,16 +12,16 @@ function renderMarkup(films) {
       genres = ['movie'],
       release_date = 'Unknown-date',
       vote_average = 'Unknown',
-      localId = '',
+      key = '',
     } = film;
 
     if (refs.header.classList.contains('lib')) {
-      localId = film.localId;
+      key = film.key;
     }
 
     const posterUrl = poster_path ? `${MOVIE_POSTER_URL}${poster_path}` : '';
     acc += `<li class="card-set-item film-card">
-        <button type='button' class='film-button' data-localid='${localId}' data-id='${id}'>
+        <button type='button' class='film-button' data-key='${key}' data-id='${id}'>
             <img style='height:400px' src="${posterUrl}" alt="${original_title}" class="movie-poster-img" />
             <div>
                 <h2 class="movie-title">

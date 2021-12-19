@@ -1,13 +1,13 @@
 const filterLibFilms = films => {
   const keys = Object.keys(films);
 
-  const filterFilms = [];
+  const filteredFilms = [];
 
   for (const key of keys) {
-    filterFilms.push({ key, ...films[key] });
+    filteredFilms.push({ key, ...films[key] });
   }
 
-  return filterFilms;
+  return filteredFilms.reverse();
 };
 
 export { filterLibFilms };

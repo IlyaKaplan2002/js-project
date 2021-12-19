@@ -8,6 +8,7 @@ import { onSignUpClick } from './signUp';
 import { modals } from '../modals';
 import { makeWatched } from '../main/makeWatched';
 import { onFilterButtonClick } from './onFilterButtonClick';
+import { checkButtons } from '../modalFilm/checkButtons';
 
 const homeHeaderMarkup = `<form name="search" class="search">
       <input class="search__input" type="text" name="query" placeholder="Поиск фильмов" />
@@ -93,6 +94,8 @@ const onNavListClick = e => {
       }
       break;
   }
+
+  checkButtons();
 };
 
 const makeNavList = () => {

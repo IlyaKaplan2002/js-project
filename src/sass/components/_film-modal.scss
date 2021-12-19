@@ -275,6 +275,10 @@
   }
 }
 
+.delete {
+  @extend .add-to-watched;
+}
+
 .add-to-queue {
   border: 1px solid var(--main-black);
 
