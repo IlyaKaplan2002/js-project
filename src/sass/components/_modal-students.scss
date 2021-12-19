@@ -1,13 +1,12 @@
 .backdrop-students {
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 30px;  
 }
-
+    
 .modal-students {
   padding: 20px;
   width: 75vw;
-  position: relative;
-
+  position: relative;  
   overflow-y: auto;
 
   background-color: white;
@@ -93,7 +92,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .feature-list__greed {
     flex-basis: calc(100% / 4 - 30px);
   }
