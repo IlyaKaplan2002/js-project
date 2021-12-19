@@ -4,6 +4,7 @@ import { removeLoader } from '../base/reloader';
 import { store } from '../base/store';
 import { matchGenresAndFilter } from '../cards/matchGenres';
 import { renderMarkup } from '../cards/renderMarkup';
+import { makeFilms } from '../main/makeFilms';
 import { makeTrendingMovies } from '../main/makeTrendingMovies';
 
 const onSearchSubmit = e => {
@@ -16,13 +17,7 @@ const onSearchSubmit = e => {
     makeTrendingMovies();
     return;
   }
-  findFilms()
-    .then(data => matchGenresAndFilter(data))
-    .then(renderMarkup)
-    .catch(err => {
-      Notify.failure(err.message);
-    })
-    .finally(() => removeLoader());
+  makeFilms();
 };
 
 const addSearchFormListener = () => {
