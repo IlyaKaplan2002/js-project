@@ -15,7 +15,7 @@ const makeQueue = () => {
     .catch(() => {
       const errMessage = `There isn't queue films!`;
       Notify.failure(errMessage);
-      refs.trendingMovies.innerHTML = errMessage;
+      refs.trendingMovies.innerHTML = `<p class='error'>${errMessage}</p>`;
     });
 };
 
