@@ -1,4 +1,10 @@
 .pagination {
+  &-container {
+    display: flex;
+    justify-content: center;
+    background-color: var(--header-links);
+  }
+
   &-list {
     display: flex;
     align-items: center;
@@ -38,6 +44,8 @@
     border: 1px solid transparent;
     border-radius: 5px;
 
+    cursor: pointer;
+
     &:hover {
       background-color: var(--header-links-accent);
       color: var(--header-links);
@@ -54,13 +62,25 @@
   border: 1px solid var(--pag-button-bg);
   border-radius: 5px;
   background-color: var(--pag-button-bg);
+  color: var(--main-black);
+
+  .dark & {
+    background-color: rgba(247, 247, 247, 0.4);
+    border: 1px solid var(--header-links);
+  }
 
   &-icon {
     width: 16px;
     height: 16px;
+    color: currentColor;
+
+    & > path {
+      stroke: currentColor;
+    }
   }
   &:hover {
     background-color: rgba(247, 247, 247, 0.4);
+    color: var(--header-links-accent);
   }
   &-left {
     margin-right: 8px;
@@ -70,13 +90,15 @@
   }
   &:disabled {
     background: rgba(194, 194, 194, 0.562);
+    color: var(--main-black);
+    cursor: default;
   }
 }
 
 .text-container {
   width: 40px;
   height: 40px;
-
+  color: var(--main-black);
   @include font(normal, 12px);
   text-decoration: none;
   font-weight: 500;
