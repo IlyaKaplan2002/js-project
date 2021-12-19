@@ -33,4 +33,5 @@ export const refs = {
     closeButton: document.querySelector('.closeStudentsModal'),
     backdrop: document.querySelector('.js-backdropStudents'),
   },
+  paginationList: document.querySelector('.pagination-list'),
 };

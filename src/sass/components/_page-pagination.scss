@@ -1,0 +1,89 @@
+.pagination {
+  &-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+
+    @media screen and (min-width: 768px) {
+      margin: 50px 0 60px;
+    }
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 8px;
+
+    @media screen and (min-width: 768px) {
+      margin-right: 16px;
+    }
+  }
+
+  &-button {
+    padding: 8px 12px;
+
+    @media screen and (min-width: 768px) {
+      padding: 12px 16px;
+    }
+
+    @include font(normal, 12px);
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 16px;
+
+    color: var(--main-black);
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: var(--header-links-accent);
+      color: var(--header-links);
+    }
+
+    &--current {
+      background-color: var(--header-links-accent);
+      color: var(--header-links);
+    }
+  }
+}
+
+.arrow {
+  border: 1px solid var(--pag-button-bg);
+  border-radius: 5px;
+  background-color: var(--pag-button-bg);
+
+  &-icon {
+    width: 16px;
+    height: 16px;
+  }
+  &:hover {
+    background-color: rgba(247, 247, 247, 0.4);
+  }
+  &-left {
+    margin-right: 8px;
+    @media screen and (min-width: 768px) {
+      margin-right: 16px;
+    }
+  }
+  &:disabled {
+    background: rgba(194, 194, 194, 0.562);
+  }
+}
+
+.text-container {
+  width: 40px;
+  height: 40px;
+
+  @include font(normal, 12px);
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 16px;
+  margin-right: 16px;
+}
+
+.visually-hidden {
+  display: none;
+}

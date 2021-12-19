@@ -11,6 +11,7 @@ import { removeLoader } from './js/base/reloader';
 import { checkTheme, onThemeInput } from './js/main/themes';
 import { onAddAction } from './js/modalFilm/addAction';
 import { checkButtons } from './js/modalFilm/checkButtons';
+import { pagePagination } from './js/api/pagePagination';
 
 window.onload = removeLoader;
 
