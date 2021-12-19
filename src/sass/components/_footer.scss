@@ -1,0 +1,55 @@
+.footer {
+  background: var(--pag-button-bg);
+  @include animation2(--footer-text, background-color);
+
+  &.dark {
+    --footer-text: var(--header-links);
+    background-color: var(--footer-bg-dark);
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 29px 0 20px 0;
+  }
+
+  &__info {
+    margin-left: 5px;
+    padding-bottom: 9px;
+    color: var(--footer-text);
+    @include font(normal, 14px, 16px);
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  &__icon {
+    margin: 0 10px;
+    color: var(--header-links-accent);
+    width: 14px;
+    height: 13px;
+  }
+
+  &__button {
+    margin-left: 3px;
+    cursor: pointer;
+    color: var(--footer-text);
+    @include font(normal, 14px, 16px);
+    display: flex;
+    align-items: center;
+    text-decoration-line: underline;
+
+    @media screen and (min-width: 768px) {
+      @include font(normal, 14px);
+    }
+  }
+}

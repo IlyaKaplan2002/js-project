@@ -1,0 +1,63 @@
+.main {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  position: relative;
+
+  @include mq(tablet) {
+    min-width: var(--tablet);
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @include animation2(--main-black, background-color);
+
+  &.dark {
+    --header-links: var(--header-links-reversed);
+    --main-black: var(--main-black-reversed);
+    --toggler-bg: var(--toggler-bg-reversed);
+    background-color: var(--header-links);
+  }
+}
+
+.film-button {
+  cursor: pointer;
+}
+
+.movie-title {
+  margin-bottom: 4px;
+  color: var(--main-black);
+  @include font(500, 12px, 14px);
+  text-transform: uppercase;
+  text-align: left;
+}
+.movie-poster-img {
+  margin-bottom: 10px;
+
+  border-radius: 5px;
+}
+.movie-info {
+  padding-right: 10px;
+
+  @include mq(tablet) {
+    padding-right: 20px;
+  }
+
+  color: var(--header-links-accent);
+  @include font(500, 12px, 14px);
+  text-align: left;
+}
+.movie-genre {
+  margin-right: 10px;
+}
+.movie-rating {
+  padding: 1px 10px;
+  background-color: var(--header-links-accent);
+  color: var(--header-links);
+  @include font(500, 12px, 14px);
+  border-radius: 5px;
+}
+
+.error {
+  margin: 50px auto 0;
+  color: var(--main-black);
+}

@@ -1,0 +1,46 @@
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--backdrop-bg);
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: scale(0.5);
+  opacity: 0;
+  @include animation2(transform, opacity);
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.backdrop.is-open {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  &__close {
+    width: 30px;
+    height: 30px;
+    color: var(--main-black);
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  &__close:hover {
+    color: var(--header-links-accent);
+    cursor: pointer;
+  }
+
+  &__icon-wrapper {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__icon {
+    stroke: currentColor;
+  }
+}
