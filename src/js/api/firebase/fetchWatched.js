@@ -4,7 +4,8 @@ import { store } from '../../base/store';
 import { loader } from '../../base/reloader';
 
 export const fetchWatchedFilms = () => {
-  const userId = store.auth.userId;
+  const userId = store.auth.userId.replaceAll('"', '');
   loader();
-  return axios.get(`${FIREBASE_BASE_URL}watched/${userId}.json`).then(res => res.data);
+  const url = `${FIREBASE_BASE_URL}watched/%22${userId}%22.json`;
+  return axios.get(url).then(res => res.data);
 };

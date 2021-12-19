@@ -51,7 +51,6 @@ const onSignUpClick = () => {
   refs.authSbmBtn.textContent = 'Sign up';
   refs.authTitle.textContent = 'Sign up';
   refs.authForm.addEventListener('submit', signUp);
-  document.querySelector('.filter').removeEventListener('click', onFilterButtonClick);
   openAuthModal();
 };
 

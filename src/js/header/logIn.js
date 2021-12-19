@@ -51,7 +51,6 @@ const onLogInClick = () => {
   refs.authSbmBtn.textContent = 'Log in';
   refs.authTitle.textContent = 'Log in';
   refs.authForm.addEventListener('submit', logIn);
-  document.querySelector('.filter').removeEventListener('click', onFilterButtonClick);
   openAuthModal();
 };
 

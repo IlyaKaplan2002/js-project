@@ -11,7 +11,6 @@ const logOut = () => {
   store.movie.query = '';
   makeNavList();
   makeTrendingMovies();
-  document.querySelector('.filter').removeEventListener('click', onFilterButtonClick);
 };
 
 export { logOut };

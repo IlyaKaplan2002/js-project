@@ -1,3 +1,4 @@
+import { Notify } from 'notiflix';
 import { fetchQueueFilms } from '../api/firebase/fetchQueue';
 import { refs } from '../base/refs';
 import { removeLoader } from '../base/reloader';

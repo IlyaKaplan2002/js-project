@@ -4,7 +4,8 @@ import { store } from '../../base/store';
 import { loader } from '../../base/reloader';
 
 export const fetchQueueFilms = () => {
-  const userId = store.auth.userId;
+  const userId = store.auth.userId.replaceAll('"', '');
   loader();
-  return axios.get(`${FIREBASE_BASE_URL}queue/${userId}.json`).then(res => res.data);
+  const url = `${FIREBASE_BASE_URL}queue/%22${userId}%22.json`;
+  return axios.get(url).then(res => res.data);
 };

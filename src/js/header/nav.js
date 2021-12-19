@@ -50,8 +50,8 @@ const onLibClick = () => {
     .querySelector(`[data-filteraction='watched']`)
     .closest('li')
     .classList.add('filter__item--current');
-  makeWatched();
   document.querySelector('.filter').addEventListener('click', onFilterButtonClick);
+  makeWatched();
 };
 
 const onNavListClick = e => {
