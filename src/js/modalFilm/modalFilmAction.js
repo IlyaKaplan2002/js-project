@@ -37,7 +37,7 @@ const renderOneMovie = (film, key) => {
   refs.filmModal.filmModalVotes.textContent = `${vote_count}`;
   refs.filmModal.filmModalPopularity.textContent = `${popularity.toFixed(1)}`;
   refs.filmModal.filmModalOriginalTitle.textContent = `${original_title}`;
-  refs.filmModal.filmModalGenre.textContent = `${genres}`;
+  refs.filmModal.filmModalGenre.textContent = `${genres.join(', ')}`;
   refs.filmModal.filmModalAbout.textContent = `${overview}`;
 };
 
