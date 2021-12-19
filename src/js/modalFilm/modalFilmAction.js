@@ -5,7 +5,7 @@ import { MOVIE_POSTER_URL } from '../api/apiBaseURLs';
 import { removeLoader } from '../base/reloader';
 import { store } from '../base/store';
 
-const renderOneMovie = film => {
+const renderOneMovie = (film, key) => {
   const {
     id,
     poster_path,
@@ -22,6 +22,7 @@ const renderOneMovie = film => {
 
   if (isLoggedIn) {
     refs.filmModal.filmModalButtons.dataset.filmid = id;
+    refs.filmModal.filmModalButtons.dataset.key = key;
     refs.filmModal.filmModalButtons.classList.remove('visually-hidden');
   } else {
     refs.filmModal.filmModalButtons.classList.add('visually-hidden');
@@ -43,12 +44,13 @@ const renderOneMovie = film => {
 const onFilmsListClick = e => {
   if (e.target.nodeName === 'UL' || !e.target.closest('button')) return;
   const id = e.target.closest('button').dataset.id;
+  const key = e.target.closest('button').dataset.key;
   fetchOneMovie(id)
     .then(data => {
       removeLoader();
       return matchGenresAndFilter(data);
     })
-    .then(renderOneMovie);
+    .then(film => renderOneMovie(film, key));
 };
 
 export { onFilmsListClick };
