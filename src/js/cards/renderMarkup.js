@@ -5,18 +5,23 @@ export { renderMarkup };
 
 function renderMarkup(films) {
   const markup = films.reduce((acc, film) => {
-    const {
+    let {
       id,
       poster_path,
       original_title = 'Unknown',
       genres = ['movie'],
       release_date = 'Unknown-date',
       vote_average = 'Unknown',
+      localId = '',
     } = film;
 
+    if (refs.header.classList.contains('lib')) {
+      localId = film.localId;
+    }
+
     const posterUrl = poster_path ? `${MOVIE_POSTER_URL}${poster_path}` : '';
-    acc += `<li class="card-set-item">
-        <button type=button data-id='${id}'>
+    acc += `<li class="card-set-item film-card">
+        <button type='button' class='film-button' data-localid='${localId}' data-id='${id}'>
             <img style='height:400px' src="${posterUrl}" alt="${original_title}" class="movie-poster-img" />
             <div>
                 <h2 class="movie-title">

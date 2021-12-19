@@ -5,6 +5,9 @@ import { makeTrendingMovies } from '../main/makeTrendingMovies';
 import { onLogInClick } from './logIn';
 import { logOut } from './logOut';
 import { onSignUpClick } from './signUp';
+import { modals } from '../modals';
+import { makeWatched } from '../main/makeWatched';
+import { onFilterButtonClick } from './onFilterButtonClick';
 
 const homeHeaderMarkup = `<form name="search" class="search">
       <input class="search__input" type="text" name="query" placeholder="Поиск фильмов" />
@@ -17,10 +20,10 @@ const homeHeaderMarkup = `<form name="search" class="search">
     </form>`;
 
 const myLibraryHeaderMarkup = `<ul class="filter">
-      <li class="filter__item filter__item--current">
-        <button class="filter__button">watched</button>
+      <li class="filter__item">
+        <button data-filteraction='watched' class="filter__button">watched</button>
       </li>
-      <li class="filter__item"><button class="filter__button">queue</button></li>
+      <li class="filter__item"><button data-filteraction='queue' class="filter__button">queue</button></li>
     </ul>`;
 
 const onHomeClick = () => {
@@ -30,8 +33,10 @@ const onHomeClick = () => {
   item.classList.add('nav__item--current');
   refs.headerWrapper.innerHTML = homeHeaderMarkup;
   store.movie.page = 1;
+  store.movie.query = '';
   addSearchFormListener();
   makeTrendingMovies();
+  document.querySelector('.filter').removeEventListener('click', onFilterButtonClick);
   if (refs.header.classList.contains('lib')) {
     refs.header.classList.remove('lib');
   }
@@ -41,6 +46,12 @@ const onLibClick = () => {
   removeSearchFormListener();
   refs.headerWrapper.innerHTML = myLibraryHeaderMarkup;
   refs.header.classList.add('lib');
+  document
+    .querySelector(`[data-filteraction='watched']`)
+    .closest('li')
+    .classList.add('filter__item--current');
+  document.querySelector('.filter').addEventListener('click', onFilterButtonClick);
+  makeWatched();
 };
 
 const onNavListClick = e => {
@@ -107,6 +118,18 @@ const makeNavList = () => {
   refs.headerLogo.addEventListener('click', onHomeClick);
   addSearchFormListener();
   refs.header.classList.remove('lib');
+  if (!store.auth.isLoggedIn) {
+    modals({
+      openButton: document.querySelector('[data-action="logIn"]'),
+      closeButton: refs.authModalClose,
+      backdrop: refs.authBackdrop,
+    });
+    modals({
+      openButton: document.querySelector('[data-action="signUp"]'),
+      closeButton: refs.authModalClose,
+      backdrop: refs.authBackdrop,
+    });
+  }
 };
 
 export { makeNavList };
