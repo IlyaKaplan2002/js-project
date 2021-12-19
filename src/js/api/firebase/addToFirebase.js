@@ -19,4 +19,5 @@ export const sendToLibrary = async (film, option) => {
     .catch(() => false);
 
   const post = isIn ? await axios.get(url) : await axios.post(url, film);
+  return post;
 };

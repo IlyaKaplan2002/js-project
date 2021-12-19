@@ -9,6 +9,7 @@ import { modals } from './js/modals';
 import { refs } from './js/base/refs';
 import { removeLoader } from './js/base/reloader';
 import { checkTheme, onThemeInput } from './js/main/themes';
+import { onAddAction } from './js/modalFilm/addAction';
 
 window.onload = removeLoader;
 
@@ -28,3 +29,5 @@ modals(refs.modalStudents);
 refs.themeCheckbox.addEventListener('input', onThemeInput);
 
 checkTheme();
+
+refs.filmModal.filmModalButtons.addEventListener('click', onAddAction);

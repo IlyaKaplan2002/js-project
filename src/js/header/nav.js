@@ -27,6 +27,7 @@ const myLibraryHeaderMarkup = `<ul class="filter">
     </ul>`;
 
 const onHomeClick = () => {
+  document.querySelector('.filter').removeEventListener('click', onFilterButtonClick);
   const current = refs.navList.querySelector('.nav__item--current');
   current.classList.remove('nav__item--current');
   const item = refs.navList.querySelector('[data-action="home"]');
@@ -36,7 +37,7 @@ const onHomeClick = () => {
   store.movie.query = '';
   addSearchFormListener();
   makeTrendingMovies();
-  document.querySelector('.filter').removeEventListener('click', onFilterButtonClick);
+
   if (refs.header.classList.contains('lib')) {
     refs.header.classList.remove('lib');
   }
