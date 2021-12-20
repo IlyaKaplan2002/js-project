@@ -1,4 +1,5 @@
 export const refs = {
+  scrollToTopBtn: document.querySelector('.scrollToTopBtn'),
   main: document.querySelector('.main'),
   footer: document.querySelector('.footer'),
   themeCheckbox: document.querySelector('.theme-checkbox'),
