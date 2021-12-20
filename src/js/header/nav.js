@@ -28,14 +28,14 @@ const myLibraryHeaderMarkup = `<ul class="filter">
     </ul>`;
 
 const onHomeClick = () => {
-  document.querySelector('.filter').removeEventListener('click', onFilterButtonClick);
+  if (refs.header.classList.contains('lib')) {
+    document.querySelector('.filter').removeEventListener('click', onFilterButtonClick);
+  }
   const current = refs.navList.querySelector('.nav__item--current');
   current.classList.remove('nav__item--current');
   const item = refs.navList.querySelector('[data-action="home"]');
   item.classList.add('nav__item--current');
   refs.headerWrapper.innerHTML = homeHeaderMarkup;
-  store.movie.page = 1;
-  store.movie.query = '';
   addSearchFormListener();
   makeTrendingMovies();
 
@@ -45,7 +45,9 @@ const onHomeClick = () => {
 };
 
 const onLibClick = () => {
-  removeSearchFormListener();
+  if (!refs.header.classList.contains('lib')) {
+    removeSearchFormListener();
+  }
   refs.headerWrapper.innerHTML = myLibraryHeaderMarkup;
   refs.header.classList.add('lib');
   document
@@ -62,6 +64,8 @@ const onNavListClick = e => {
   const current = refs.navList.querySelector('.nav__item--current');
   const item = e.target.closest('li');
   const action = item.dataset.action;
+  store.movie.page = 1;
+  store.movie.query = '';
 
   current.classList.remove('nav__item--current');
   item.classList.add('nav__item--current');

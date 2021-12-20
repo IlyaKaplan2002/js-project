@@ -1,4 +1,5 @@
 const filterLibFilms = films => {
+  if (!films) throw Error('No films');
   const keys = Object.keys(films);
 
   const filteredFilms = [];
