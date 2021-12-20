@@ -2,12 +2,16 @@
 
 @import './utils/vars';
 @import './utils/mixins';
+@import './utils/modal';
+@import './utils/scroll-up';
 
 @import './base/global-styles';
 @import './base/container';
 @import './base/card-set';
 @import './base/reloader';
+
 @import './utils/modal';
+
 @import './components/header';
 @import './components/auth-modal';
 @import './components/modal-students';
