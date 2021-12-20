@@ -31,6 +31,8 @@ const onHomeClick = () => {
   if (refs.header.classList.contains('lib')) {
     document.querySelector('.filter').removeEventListener('click', onFilterButtonClick);
   }
+  store.movie.page = 1;
+  store.movie.query = '';
   const current = refs.navList.querySelector('.nav__item--current');
   current.classList.remove('nav__item--current');
   const item = refs.navList.querySelector('[data-action="home"]');
