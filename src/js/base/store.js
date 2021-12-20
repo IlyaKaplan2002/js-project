@@ -6,6 +6,7 @@ export const store = {
   movie: {
     query: '',
     totalPages: 0,
+    perPage: 20,
     page: 1,
     genres: [
       { id: 28, name: 'Action' },

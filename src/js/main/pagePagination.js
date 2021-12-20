@@ -2,7 +2,9 @@ import { refs } from '../base/refs';
 import { store } from '../base/store';
 import { scrollUp } from '../scrollUp';
 import { makeFilms } from './makeFilms';
+import { makeQueue } from './makeQueue';
 import { makeTrendingMovies } from './makeTrendingMovies';
+import { makeWatched } from './makeWatched';
 
 const leftArrow = `
         <li class="arrow-item arrow-left">
@@ -24,6 +26,22 @@ const rightArrow = `
 
 const points = `<li class='points'><span class='text-container'>...</span></li>`;
 
+const makeFilmsList = () => {
+  if (refs.header.classList.contains('lib')) {
+    if (
+      document.querySelector('.filter__item--current>button').dataset.filteraction === 'watched'
+    ) {
+      makeWatched();
+    } else {
+      makeQueue();
+    }
+  } else {
+    if (!store.movie.query) {
+      makeTrendingMovies();
+    } else makeFilms();
+  }
+};
+
 const addFirstAndLastButtons = () => {
   const totalPages = store.movie.totalPages;
   refs.paginationList.insertAdjacentHTML('afterbegin', makeOneButton(1));
@@ -44,9 +62,8 @@ const onArrowClick = e => {
   if (screen.width >= 768) {
     makeMarkupForDesktop();
   }
-  if (!store.movie.query) {
-    makeTrendingMovies();
-  } else makeFilms();
+
+  makeFilmsList();
 
   scrollUp();
 };
@@ -66,9 +83,8 @@ const onPagListClick = e => {
   if (screen.width >= 768) {
     makeMarkupForDesktop();
   }
-  if (!store.movie.query) {
-    makeTrendingMovies();
-  } else makeFilms();
+
+  makeFilmsList();
 
   scrollUp();
 };
@@ -77,13 +93,15 @@ const addMobilePoints = () => {
   const page = store.movie.page;
   const totalPages = store.movie.totalPages;
 
-  if (page >= 3 && page <= totalPages - 2) {
-    refs.paginationList.insertAdjacentHTML('afterbegin', points);
-    refs.paginationList.insertAdjacentHTML('beforeend', points);
-  } else if (page < 3) {
-    refs.paginationList.insertAdjacentHTML('beforeend', points);
-  } else {
-    refs.paginationList.insertAdjacentHTML('afterbegin', points);
+  if (totalPages > 4) {
+    if (page >= 3 && page <= totalPages - 2) {
+      refs.paginationList.insertAdjacentHTML('afterbegin', points);
+      refs.paginationList.insertAdjacentHTML('beforeend', points);
+    } else if (page < 3) {
+      refs.paginationList.insertAdjacentHTML('beforeend', points);
+    } else {
+      refs.paginationList.insertAdjacentHTML('afterbegin', points);
+    }
   }
 };
 
@@ -91,13 +109,15 @@ const addDesktopPoints = () => {
   const page = store.movie.page;
   const totalPages = store.movie.totalPages;
 
-  if (page >= 5 && page <= totalPages - 4) {
-    refs.paginationList.insertAdjacentHTML('afterbegin', points);
-    refs.paginationList.insertAdjacentHTML('beforeend', points);
-  } else if (page < 5) {
-    refs.paginationList.insertAdjacentHTML('beforeend', points);
-  } else {
-    refs.paginationList.insertAdjacentHTML('afterbegin', points);
+  if (totalPages > 7) {
+    if (page >= 5 && page <= totalPages - 4) {
+      refs.paginationList.insertAdjacentHTML('afterbegin', points);
+      refs.paginationList.insertAdjacentHTML('beforeend', points);
+    } else if (page < 5) {
+      refs.paginationList.insertAdjacentHTML('beforeend', points);
+    } else {
+      refs.paginationList.insertAdjacentHTML('afterbegin', points);
+    }
   }
 };
 
@@ -145,7 +165,7 @@ const makeMarkupForMobile = () => {
       }
     }
   } else {
-    for (let i = 1; i <= totalPages; i += 1) {
+    for (let i = 2; i <= totalPages - 1; i += 1) {
       markup += makeOneButton(i);
     }
   }
@@ -208,4 +228,4 @@ const makePagination = () => {
   }
 };
 
-export { makePagination };
+export { makePagination, removePagination };
