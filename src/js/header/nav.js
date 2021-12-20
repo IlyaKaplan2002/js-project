@@ -5,6 +5,10 @@ import { makeTrendingMovies } from '../main/makeTrendingMovies';
 import { onLogInClick } from './logIn';
 import { logOut } from './logOut';
 import { onSignUpClick } from './signUp';
+import { modals } from '../modals';
+import { makeWatched } from '../main/makeWatched';
+import { onFilterButtonClick } from './onFilterButtonClick';
+import { checkButtons } from '../modalFilm/checkButtons';
 
 const homeHeaderMarkup = `<form name="search" class="search">
       <input class="search__input" type="text" name="query" placeholder="Поиск фильмов" />
@@ -17,30 +21,43 @@ const homeHeaderMarkup = `<form name="search" class="search">
     </form>`;
 
 const myLibraryHeaderMarkup = `<ul class="filter">
-      <li class="filter__item filter__item--current">
-        <button class="filter__button">watched</button>
+      <li class="filter__item">
+        <button data-filteraction='watched' class="filter__button">watched</button>
       </li>
-      <li class="filter__item"><button class="filter__button">queue</button></li>
+      <li class="filter__item"><button data-filteraction='queue' class="filter__button">queue</button></li>
     </ul>`;
 
 const onHomeClick = () => {
+  if (refs.header.classList.contains('lib')) {
+    document.querySelector('.filter').removeEventListener('click', onFilterButtonClick);
+  }
+  store.movie.page = 1;
+  store.movie.query = '';
   const current = refs.navList.querySelector('.nav__item--current');
   current.classList.remove('nav__item--current');
   const item = refs.navList.querySelector('[data-action="home"]');
   item.classList.add('nav__item--current');
   refs.headerWrapper.innerHTML = homeHeaderMarkup;
-  store.movie.page = 1;
   addSearchFormListener();
   makeTrendingMovies();
+
   if (refs.header.classList.contains('lib')) {
     refs.header.classList.remove('lib');
   }
 };
 
 const onLibClick = () => {
-  removeSearchFormListener();
+  if (!refs.header.classList.contains('lib')) {
+    removeSearchFormListener();
+  }
   refs.headerWrapper.innerHTML = myLibraryHeaderMarkup;
   refs.header.classList.add('lib');
+  document
+    .querySelector(`[data-filteraction='watched']`)
+    .closest('li')
+    .classList.add('filter__item--current');
+  document.querySelector('.filter').addEventListener('click', onFilterButtonClick);
+  makeWatched();
 };
 
 const onNavListClick = e => {
@@ -49,6 +66,8 @@ const onNavListClick = e => {
   const current = refs.navList.querySelector('.nav__item--current');
   const item = e.target.closest('li');
   const action = item.dataset.action;
+  store.movie.page = 1;
+  store.movie.query = '';
 
   current.classList.remove('nav__item--current');
   item.classList.add('nav__item--current');
@@ -81,6 +100,8 @@ const onNavListClick = e => {
       }
       break;
   }
+
+  checkButtons();
 };
 
 const makeNavList = () => {
@@ -107,6 +128,18 @@ const makeNavList = () => {
   refs.headerLogo.addEventListener('click', onHomeClick);
   addSearchFormListener();
   refs.header.classList.remove('lib');
+  if (!store.auth.isLoggedIn) {
+    modals({
+      openButton: document.querySelector('[data-action="logIn"]'),
+      closeButton: refs.authModalClose,
+      backdrop: refs.authBackdrop,
+    });
+    modals({
+      openButton: document.querySelector('[data-action="signUp"]'),
+      closeButton: refs.authModalClose,
+      backdrop: refs.authBackdrop,
+    });
+  }
 };
 
 export { makeNavList };

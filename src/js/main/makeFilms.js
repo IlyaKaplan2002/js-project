@@ -1,17 +1,19 @@
 import { Notify } from 'notiflix';
-import { fetchTrendingMovies } from '../api/movie/fetchTrendingMovies';
+import { findFilms } from '../api/movie/findFilms';
 import { removeLoader } from '../base/reloader';
-import { store } from '../base/store';
 import { matchGenresAndFilter } from '../cards/matchGenres';
 import { renderMarkup } from '../cards/renderMarkup';
+import { makeTrendingMovies } from './makeTrendingMovies';
 
-const makeTrendingMovies = page => {
-  fetchTrendingMovies(page)
+const makeFilms = () => {
+  findFilms()
     .then(data => matchGenresAndFilter(data))
     .then(renderMarkup)
-    .catch(err => Notify.failure(err.message))
+    .catch(err => {
+      Notify.failure(err.message);
+      makeTrendingMovies();
+    })
     .finally(() => removeLoader());
-  store.movie.query = '';
 };
 
-export { makeTrendingMovies };
+export { makeFilms };

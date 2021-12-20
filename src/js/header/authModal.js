@@ -4,21 +4,19 @@ import { makeNavList } from './nav';
 import { signUp } from './signUp';
 
 const closeAuthModal = () => {
-  refs.authBackdrop.classList.remove('is-open');
   refs.authForm.removeEventListener('submit', logIn);
   refs.authForm.removeEventListener('submit', signUp);
   makeNavList();
 };
 
-const escCloseModal = e => {
+const escCloseAuthModal = e => {
   if (e.key !== 'Escape') return;
   closeAuthModal();
-  document.removeEventListener('keydown', escCloseModal);
+  document.removeEventListener('keydown', escCloseAuthModal);
 };
 
 const openAuthModal = () => {
-  refs.authBackdrop.classList.add('is-open');
-  document.addEventListener('keydown', escCloseModal);
+  document.addEventListener('keydown', escCloseAuthModal);
 };
 
 refs.authModalClose.addEventListener('click', closeAuthModal);

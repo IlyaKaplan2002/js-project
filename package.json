@@ -27,6 +27,9 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
-    "notiflix": "^3.2.2"
+    "body-scroll-lock": "^4.0.0-beta.0",
+    "notiflix": "^3.2.2",
+    "scroll": "^3.0.1",
+    "scroll-js": "^3.5.0"
   }
 }

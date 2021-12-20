@@ -10,10 +10,14 @@
   @include animation2(transform, opacity);
   display: flex;
   justify-content: center;
+  pointer-events: none;
+  z-index: 999;
 }
 
 .backdrop.is-open {
   transform: scale(1);
+  opacity: 1;
+  pointer-events: all;
 }
 
 .modal {
