@@ -1,9 +1,9 @@
-import { refs } from '../base/refs';
+import { refs } from '../store/refs';
 import { matchGenresAndFilter } from '../cards/matchGenres';
 import { fetchOneMovie } from '/js/api/movie/fetchOneMovie';
 import { MOVIE_POSTER_URL } from '../api/apiBaseURLs';
-import { removeLoader } from '../base/reloader';
-import { store } from '../base/store';
+import { removeLoader } from '../utils/preloader';
+import { store } from '../store/store';
 
 const renderOneMovie = (film, key) => {
   const {
@@ -13,10 +13,17 @@ const renderOneMovie = (film, key) => {
     genres = ['movie'],
     vote_average = 'Unknown',
     title,
-    overview,
+    overview = 'Not found.',
     popularity,
     vote_count,
   } = film[0];
+
+  const about = overview ? overview : 'Not found.';
+  if (!overview) {
+    refs.filmModal.filmModalButtons.classList.add('noOverview');
+  } else {
+    refs.filmModal.filmModalButtons.classList.remove('noOverview');
+  }
 
   const isLoggedIn = store.auth.isLoggedIn;
 
@@ -28,7 +35,9 @@ const renderOneMovie = (film, key) => {
     refs.filmModal.filmModalButtons.classList.add('visually-hidden');
   }
 
-  const poster = poster_path ? `${MOVIE_POSTER_URL}${poster_path}` : '';
+  const poster = poster_path
+    ? `${MOVIE_POSTER_URL}${poster_path}`
+    : 'https://d3aa3603f5de3f81cb9fdaa5c591a84d5723e3cb.hosting4cdn.com/wp-content/uploads/2020/11/404-poster-not-found-CG17701-1.png';
 
   refs.filmModal.filmModalImage.setAttribute('src', `${poster}`);
   refs.filmModal.filmModalImage.setAttribute('alt', `${original_title}`);
@@ -38,7 +47,7 @@ const renderOneMovie = (film, key) => {
   refs.filmModal.filmModalPopularity.textContent = `${popularity.toFixed(1)}`;
   refs.filmModal.filmModalOriginalTitle.textContent = `${original_title}`;
   refs.filmModal.filmModalGenre.textContent = `${genres.join(', ')}`;
-  refs.filmModal.filmModalAbout.textContent = `${overview}`;
+  refs.filmModal.filmModalAbout.textContent = `${about}`;
 };
 
 const onFilmsListClick = e => {

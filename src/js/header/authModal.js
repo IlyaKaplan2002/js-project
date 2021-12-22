@@ -1,4 +1,4 @@
-import { refs } from '../base/refs';
+import { refs } from '../store/refs';
 import { logIn } from './logIn';
 import { makeNavList } from './nav';
 import { signUp } from './signUp';

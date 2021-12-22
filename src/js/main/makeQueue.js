@@ -1,7 +1,7 @@
 import { Notify } from 'notiflix';
 import { fetchQueueFilms } from '../api/firebase/fetchQueue';
-import { refs } from '../base/refs';
-import { removeLoader } from '../base/reloader';
+import { refs } from '../store/refs';
+import { removeLoader } from '../utils/preloader';
 import { filterLibFilms } from '../cards/filterLibFilms';
 import { filterLibFilmsData } from '../cards/filterLibFilmsData';
 import { renderMarkup } from '../cards/renderMarkup';

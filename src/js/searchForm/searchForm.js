@@ -1,5 +1,5 @@
 import { Notify } from 'notiflix';
-import { store } from '../base/store';
+import { store } from '../store/store';
 import { makeFilms } from '../main/makeFilms';
 import { makeTrendingMovies } from '../main/makeTrendingMovies';
 

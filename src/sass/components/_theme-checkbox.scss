@@ -16,15 +16,31 @@
   }
 
   &__toggler {
+    z-index: 3;
     display: block;
     height: 23px;
     width: 23px;
     border-radius: 50%;
-    background-color: var(--toggler-bg);
+    background-color: var(--main-black);
     @include animation2(background-color, transform);
   }
 
   &:checked + &__label > &__toggler {
     transform: translateX(38px);
   }
+}
+
+.theme-icon {
+  position: absolute;
+  font-size: 20px;
+}
+
+.moon {
+  left: 5px;
+  color: var(--main-black);
+}
+
+.sun {
+  right: 5px;
+  color: var(--main-black);
 }

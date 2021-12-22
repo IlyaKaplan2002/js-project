@@ -1,12 +1,12 @@
 import { signUpFetch } from '../api/auth/authAPI';
 import { closeAuthModal, openAuthModal } from './authModal';
-import { refs } from '../base/refs';
-import { store } from '../base/store';
+import { refs } from '../store/refs';
+import { store } from '../store/store';
 import { makeNavList } from './nav';
 import { Notify } from 'notiflix';
 import { makeTrendingMovies } from '../main/makeTrendingMovies';
-import { modals } from '../modals';
-import { removeLoader } from '../base/reloader';
+import { modals } from '../utils/modals';
+import { removeLoader } from '../utils/preloader';
 
 const signUp = e => {
   e.preventDefault();

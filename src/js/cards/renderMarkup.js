@@ -1,5 +1,5 @@
 import { MOVIE_POSTER_URL } from '../api/apiBaseURLs';
-import { refs } from '../base/refs';
+import { refs } from '../store/refs';
 
 export { renderMarkup };
 
@@ -19,10 +19,14 @@ function renderMarkup(films) {
       key = film.key;
     }
 
-    const posterUrl = poster_path ? `${MOVIE_POSTER_URL}${poster_path}` : '';
+    const posterUrl = poster_path
+      ? `${MOVIE_POSTER_URL}${poster_path}`
+      : 'https://d3aa3603f5de3f81cb9fdaa5c591a84d5723e3cb.hosting4cdn.com/wp-content/uploads/2020/11/404-poster-not-found-CG17701-1.png';
     acc += `<li class="card-set-item film-card">
         <button type='button' class='film-button' data-key='${key}' data-id='${id}'>
-            <img style='height:400px' src="${posterUrl}" alt="${original_title}" class="movie-poster-img" />
+            <div class="img-wrapper">
+              <img src="${posterUrl}" alt="${original_title}" class="movie-poster-img" />
+            </div>
             <div>
                 <h2 class="movie-title">
                     ${original_title}

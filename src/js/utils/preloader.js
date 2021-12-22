@@ -2,7 +2,7 @@ const loaderMarkup = `<div id="page-loader" class="preloader">
     <div class="loader"></div>
     </div>`;
 
-const loader = () => {
+const preloader = () => {
   document.body.insertAdjacentHTML('beforeend', loaderMarkup);
 };
 
@@ -11,4 +11,4 @@ const removeLoader = () => {
   preloader.remove();
 };
 
-export { loader, removeLoader };
+export { preloader, removeLoader };

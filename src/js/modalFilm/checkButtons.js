@@ -1,4 +1,4 @@
-import { refs } from '../base/refs';
+import { refs } from '../store/refs';
 
 const checkButtons = () => {
   if (refs.header.classList.contains('lib')) {

@@ -1,4 +1,4 @@
-import { store } from '../base/store';
+import { store } from '../store/store';
 import { makeQueue } from '../main/makeQueue';
 import { makeWatched } from '../main/makeWatched';
 import { checkButtons } from '../modalFilm/checkButtons';

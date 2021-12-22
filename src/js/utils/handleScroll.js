@@ -1,4 +1,4 @@
-import { refs } from './base/refs';
+import { refs } from '../store/refs';
 
 export function handleScroll() {
   let scrollableHeight =
@@ -6,8 +6,8 @@ export function handleScroll() {
   const GOLDEN_RATIO = 0.5;
 
   if (document.documentElement.scrollTop / scrollableHeight > GOLDEN_RATIO) {
-    refs.scrollToTopBtn.style.display = 'block';
+    refs.scrollToTopBtn.classList.remove('isHidden');
   } else {
-    refs.scrollToTopBtn.style.display = 'none';
+    refs.scrollToTopBtn.classList.add('isHidden');
   }
 }

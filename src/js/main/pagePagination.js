@@ -1,6 +1,6 @@
-import { refs } from '../base/refs';
-import { store } from '../base/store';
-import { scrollUp } from '../scrollUp';
+import { refs } from '../store/refs';
+import { store } from '../store/store';
+import { scrollUp } from '../utils/scrollUp';
 import { makeFilms } from './makeFilms';
 import { makeQueue } from './makeQueue';
 import { makeTrendingMovies } from './makeTrendingMovies';

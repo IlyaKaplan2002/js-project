@@ -1,12 +1,12 @@
 import axios from 'axios';
-import { loader } from '../../base/reloader';
+import { preloader } from '../../utils/preloader';
 import { FIREBASE_AUTH_BASE_URL } from '../apiBaseURLs';
 import { FIREBASE_API } from '../apiKeys';
 
 const logInFetch = ({ email, password }) => {
   const url = `${FIREBASE_AUTH_BASE_URL}signInWithPassword?key=${FIREBASE_API}`;
 
-  loader();
+  preloader();
 
   return axios.post(url, {
     email,

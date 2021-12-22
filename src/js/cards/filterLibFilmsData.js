@@ -1,4 +1,4 @@
-import { store } from '../base/store';
+import { store } from '../store/store';
 import { makePagination } from '../main/pagePagination';
 
 const filterLibFilmsData = data => {
