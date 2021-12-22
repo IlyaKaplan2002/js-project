@@ -44,6 +44,7 @@ const onHomeClick = () => {
   if (refs.header.classList.contains('lib')) {
     refs.header.classList.remove('lib');
   }
+  checkButtons();
 };
 
 const onLibClick = () => {
