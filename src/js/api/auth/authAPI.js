@@ -18,7 +18,7 @@ const logInFetch = ({ email, password }) => {
 const signUpFetch = ({ email, password }) => {
   const url = `${FIREBASE_AUTH_BASE_URL}signUp?key=${FIREBASE_API}`;
 
-  loader();
+  preloader();
 
   return axios.post(url, {
     email,
