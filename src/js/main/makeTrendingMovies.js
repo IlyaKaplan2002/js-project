@@ -1,7 +1,7 @@
 import { Notify } from 'notiflix';
 import { fetchTrendingMovies } from '../api/movie/fetchTrendingMovies';
-import { removeLoader } from '../base/reloader';
-import { store } from '../base/store';
+import { removeLoader } from '../utils/preloader';
+import { store } from '../store/store';
 import { matchGenresAndFilter } from '../cards/matchGenres';
 import { renderMarkup } from '../cards/renderMarkup';
 

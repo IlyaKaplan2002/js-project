@@ -21,6 +21,10 @@
 
 .film-button {
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .movie-title {
@@ -30,8 +34,14 @@
   text-transform: uppercase;
   text-align: left;
 }
-.movie-poster-img {
+.img-wrapper {
+  display: inline-block;
+  width: 100%;
   margin-bottom: 10px;
+}
+.movie-poster-img {
+  height: 100%;
+  object-fit: cover;
 
   border-radius: 5px;
 }

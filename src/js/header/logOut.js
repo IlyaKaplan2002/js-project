@@ -1,4 +1,4 @@
-import { store } from '../base/store';
+import { store } from '../store/store';
 import { makeTrendingMovies } from '../main/makeTrendingMovies';
 import { makeNavList } from './nav';
 

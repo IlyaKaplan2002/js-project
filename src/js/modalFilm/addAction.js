@@ -2,12 +2,12 @@ import { Notify } from 'notiflix';
 import { sendToLibrary } from '../api/firebase/addToFirebase';
 import { delFromFirebase } from '../api/firebase/delFromFirebase';
 import { fetchOneMovie } from '../api/movie/fetchOneMovie';
-import { refs } from '../base/refs';
-import { removeLoader } from '../base/reloader';
+import { refs } from '../store/refs';
+import { removeLoader } from '../utils/preloader';
 import { matchGenresAndFilter } from '../cards/matchGenres';
 import { makeQueue } from '../main/makeQueue';
 import { makeWatched } from '../main/makeWatched';
-import { modals } from '../modals';
+import { modals } from '../utils/modals';
 
 const onDeleteClick = key => {
   const currentFilter = document.querySelector('.filter__item--current>button').dataset

@@ -1,4 +1,4 @@
-import { store } from '../base/store';
+import { store } from '../store/store';
 
 const matchGenresAndFilter = films => {
   if (films.length === 0) {

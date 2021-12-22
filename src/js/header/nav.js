@@ -1,11 +1,11 @@
-import { refs } from '../base/refs';
-import { store } from '../base/store';
-import { addSearchFormListener, removeSearchFormListener } from '../findForm/findForm';
+import { refs } from '../store/refs';
+import { store } from '../store/store';
+import { addSearchFormListener, removeSearchFormListener } from '../searchForm/searchForm';
 import { makeTrendingMovies } from '../main/makeTrendingMovies';
 import { onLogInClick } from './logIn';
 import { logOut } from './logOut';
 import { onSignUpClick } from './signUp';
-import { modals } from '../modals';
+import { modals } from '../utils/modals';
 import { makeWatched } from '../main/makeWatched';
 import { onFilterButtonClick } from './onFilterButtonClick';
 import { checkButtons } from '../modalFilm/checkButtons';

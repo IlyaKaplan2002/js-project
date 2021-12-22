@@ -12,6 +12,13 @@
   }
 }
 
+.noOverview {
+  @media screen and (min-width: 1024px) {
+    position: relative;
+    left: 100px;
+  }
+}
+
 .cinema__image {
   width: 400px;
 }
@@ -22,16 +29,19 @@
   padding: 48px 20px 41px 20px;
   overflow: auto;
   max-height: calc(100vh - 40px);
+  min-width: 260px;
   max-width: 280px;
 
   background: var(--header-links);
 
   @media screen and (min-width: 768px) {
+    min-width: 600px;
     max-width: 618px;
     padding: 42px 30px 40px 28px;
   }
 
   @media screen and (min-width: 1024px) {
+    min-width: 822px;
     max-width: 882px;
     padding: 50px 30px 40px 30px;
     overflow: hidden;

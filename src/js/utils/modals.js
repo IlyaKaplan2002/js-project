@@ -1,6 +1,7 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 const modals = ({ openButton, closeButton, backdrop, action = 'init' }) => {
+  backdrop.style.display = 'flex';
   backdrop.classList.add('backdrop');
   closeButton.classList.add('modal__close');
   closeButton.querySelector('use').classList.add('modal__icon');

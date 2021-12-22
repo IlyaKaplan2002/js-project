@@ -1,10 +1,10 @@
 import { Notify } from 'notiflix';
 import { logInFetch } from '../api/auth/authAPI';
-import { refs } from '../base/refs';
-import { removeLoader } from '../base/reloader';
-import { store } from '../base/store';
+import { refs } from '../store/refs';
+import { removeLoader } from '../utils/preloader';
+import { store } from '../store/store';
 import { makeTrendingMovies } from '../main/makeTrendingMovies';
-import { modals } from '../modals';
+import { modals } from '../utils/modals';
 import { closeAuthModal, openAuthModal } from './authModal';
 import { makeNavList } from './nav';
 

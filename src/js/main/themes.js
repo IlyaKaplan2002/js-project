@@ -1,4 +1,4 @@
-import { refs } from '../base/refs';
+import { refs } from '../store/refs';
 
 const checkTheme = () => {
   const isDarkTheme = JSON.parse(localStorage.getItem('isDarkTheme'));
