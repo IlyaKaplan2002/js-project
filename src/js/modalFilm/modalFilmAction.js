@@ -56,10 +56,10 @@ const onFilmsListClick = e => {
   const key = e.target.closest('button').dataset.key;
   fetchOneMovie(id)
     .then(data => {
-      removeLoader();
       return matchGenresAndFilter(data);
     })
-    .then(film => renderOneMovie(film, key));
+    .then(film => renderOneMovie(film, key))
+    .finally(() => removeLoader());
 };
 
 export { onFilmsListClick };
