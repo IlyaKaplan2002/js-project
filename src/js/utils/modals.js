@@ -1,4 +1,5 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+// Тут должен быть класс
 
 const modals = ({ openButton, closeButton, backdrop, action = 'init' }) => {
   backdrop.style.display = 'flex';
